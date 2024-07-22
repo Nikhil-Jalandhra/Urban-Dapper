@@ -1,10 +1,11 @@
+import About from "./Pages/About"
 
 
 function App() {
 
   return (
     <>
-     We are ready to create our new project
+    <About/>
     </>
   )
 }
