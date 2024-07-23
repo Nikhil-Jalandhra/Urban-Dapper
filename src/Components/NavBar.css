@@ -1,27 +1,53 @@
 .navbar {
     width: 100%;
     height: 15vh;
-    background-color: darkcyan;
     display: flex;
 }
 
-.logoContainer{
-    width: 30vw;
+.logoContainer {
+    width: 25vw;
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: orange;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 20px;
 }
 
 .logo {
-    display: flex;
-    width: 75px;
-    height: 65px;
-    margin-left: 30px;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
 }
 
-.logoImage{
-    width: 100%;
+.navLink {
+    width: 50vw;
     height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navLinkContainer {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLinkContainer a {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ccContainer {
+    /* background-color: goldenrod; */
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
