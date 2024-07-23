@@ -1,5 +1,7 @@
 import "./NavBar.css"
 import logo from "../../Public/Logo/OnlyLogo.png"
+import { BsPersonCircle } from "react-icons/bs";
+import { HiMiniShoppingCart } from "react-icons/hi2";
 
 function NavBar() {
 
@@ -54,9 +56,8 @@ function NavBar() {
         {/* contact & cart here */}
 
         <div className="ccContainer">
-
-
-
+          <div className="ccIcon"><BsPersonCircle /></div>
+          <div className="ccIcon"><HiMiniShoppingCart /></div>
         </div>
 
       </div>

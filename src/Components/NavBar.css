@@ -2,6 +2,7 @@
     width: 100%;
     height: 15vh;
     display: flex;
+    background-color: aliceblue;
 }
 
 .logoContainer {
@@ -22,7 +23,7 @@
 }
 
 .navLink {
-    width: 50vw;
+    width: 60vw;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -35,6 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .navLinkContainer a {
@@ -46,8 +48,20 @@
 
 .ccContainer {
     /* background-color: goldenrod; */
-    width: 25vw;
+    width: 15vw;
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+}
+
+.ccIcon {
+    width: 80px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 30px;
 }
