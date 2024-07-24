@@ -1,0 +1,123 @@
+@font-face {
+    font-family: "Monigue";
+    src: url(../../Public/fontStyle/Heading.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "Neco";
+    src: url(../../Public/fontStyle/Neco.otf) format("opentype");
+}
+
+.homeImageContainer {
+    width: 100%;
+    height: 88vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+.homeImage {
+    width: 100%;
+    height: 88vh;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.homeTextContainer{
+    width: 100%;
+    height: 88vh;
+    color: white;
+    position: absolute;
+    top: 12vh;
+}
+
+/* First text animation */
+
+@keyframes textAnimation {
+    from {
+        transform: translateY(150px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.homeTextContainerHeading {
+    width: 600px;
+    margin-top: 130px;
+    margin-left: 120px;
+    text-transform: uppercase;
+    /* background-color: crimson; */
+    overflow: hidden;
+}
+
+.homeHeadingText {
+    font-family: "Monigue";
+    letter-spacing: 5px;
+    font-size: 180px;
+    animation-name: textAnimation;
+    animation-duration: 2s;
+}
+
+/* Second text animation */
+
+@keyframes textAnimation2 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 1500px;
+    }
+}
+
+.homeTextContainerHeading2 {
+    width: 1200px;
+    text-wrap: nowrap;
+    margin-top: 10px;
+    margin-left: 120px;
+    text-transform: uppercase;
+    /* background-color: crimson; */
+    overflow: hidden;
+}
+
+.homeHeadingText2 {
+    font-family: "Monigue";
+    letter-spacing: 5px;
+    font-size: 180px;
+    animation-name: textAnimation2;
+    animation-duration: 4s;
+    overflow: hidden;
+}
+
+/* Our story section */
+
+.ourStorySection {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.ourStoryHeading {
+    font-family: "Monigue";
+    letter-spacing: 3px;
+    font-size: 70px;
+}
+
+.ourStoryParaContainer {
+    height: 100%;
+    width: 70vw;
+    margin-top: 30px;
+    /* background-color: burlywood; */
+}
+
+.ourStoryPara {
+    font-family: "Monigue";
+    font-size: 25px;
+    margin-top: 30px;
+    line-height: 30px;
+    color: rgb(30, 30, 30);
+}
+
