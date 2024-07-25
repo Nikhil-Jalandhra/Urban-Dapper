@@ -1,4 +1,5 @@
 import "./NavBar.css"
+import { Link } from "react-router-dom";
 import logo from "../../Public/Logo/OnlyLogo.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
@@ -8,7 +9,7 @@ function NavBar() {
   const navLink = [
     {
       name: "Home",
-      link: "/home"
+      link: "/"
     },
     {
       name: "About",
@@ -47,7 +48,7 @@ function NavBar() {
           {
             navLink.map((item,index)=> (
               <div key={index} className="navLinkContainer">
-                <a href={item.link}><p>{item.name}</p></a>
+                <Link to={item.link}><p>{item.name}</p></Link>
               </div>
             ))
           }

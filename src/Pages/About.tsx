@@ -1,11 +1,9 @@
-import NavBar from "../Components/NavBar";
-
-
+import OurStory from "../Components/OurStory";
 
 function About() {
   return (
     <div>
-      <NavBar />
+      <OurStory/>
     </div>
   );
 }
