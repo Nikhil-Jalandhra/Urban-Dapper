@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Monigue";
     font-size: 40px;
 }
 
@@ -47,7 +46,6 @@
 
 .navLinkContainer a {
     color: black;
-    font-family: "Monigue";
     text-decoration: none;
     font-size: 22px;
     letter-spacing: 1px;
