@@ -3,7 +3,7 @@ import "./OurStory.css"
 function OurStory() {
   return (
     <div>
-       <div className="ourStorySection">
+       <div className="ourStoryContainer">
             <h1 className="ourStoryHeading">Our Story</h1>
             <div className="ourStoryParaContainer">
                 <p className="ourStoryPara">
