@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+.ourTeamContainer h1 {
+    letter-spacing: 3px;
+    font-size: 70px;
+}
+
 .ourTeamParaContainer {
     width: 70vw;
     height: 30vh;
@@ -18,7 +23,8 @@
 }
 
 .ourTeamHeroImgContainer {
-    width: 400px;
+    margin-top: 30px;
+    width: 350px;
     height: 600px;
     overflow: hidden;
     border-radius: 25px;
