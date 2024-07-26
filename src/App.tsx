@@ -17,7 +17,7 @@ function App() {
     }, 3000) 
   },);
 
-  const [loaderFalse, setLoaderFalse] = useState(true);
+  const [loaderFalse, setLoaderFalse] = useState(false);
 
   return (
     <>
