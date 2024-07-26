@@ -47,9 +47,11 @@ function NavBar() {
         <div className="navLink">
           {
             navLink.map((item,index)=> (
-              <div key={index} className="navLinkContainer">
-                <Link to={item.link}><p>{item.name}</p></Link>
-              </div>
+              <Link key={index} to={item.link}>
+                <div className="navLinkContainer">
+                  <p>{item.name}</p>
+                </div>
+              </Link>
             ))
           }
         </div>
