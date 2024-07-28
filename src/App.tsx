@@ -12,13 +12,13 @@ import Shop from "./Pages/Shop"
 function App() {
 
   useEffect(() => {
+    const timer = Math.floor(Math.random() * (3000 - 1000 + 1) + 1000 )
     setTimeout(()=>{
       setLoaderFalse(false)
-      console.log("helo")
-    }, 3000) 
+    }, timer) 
   },);
 
-  const [loaderFalse, setLoaderFalse] = useState(false);
+  const [loaderFalse, setLoaderFalse] = useState(true);
 
   return (
     <>
