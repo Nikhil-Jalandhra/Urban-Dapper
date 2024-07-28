@@ -1,3 +1,4 @@
+import aboutHeroImg from "../../Public/pageImages/aboutHeroImg.jpg"
 import OurStory from "../Components/OurStory";
 import OurTeam from "../Components/OurTeam";
 import './About.css'
@@ -5,6 +6,10 @@ import './About.css'
 function About() {
   return (
     <div>
+
+      <div className="aboutImageContainer">
+        <img src={aboutHeroImg} className="aboutImage" alt="" />
+      </div>
 
       {/* Our story */}
 
