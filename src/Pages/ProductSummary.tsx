@@ -2,6 +2,7 @@ import './ProductSummary.css'
 import { useParams } from "react-router-dom";
 import productData from "../Database/ProductDatabase";
 import { MdOutlineCurrencyRupee} from "react-icons/md";
+import { MdOutlineAddCircle } from "react-icons/md";
 
 function ProductSummary() {
 
@@ -32,15 +33,17 @@ function ProductSummary() {
                     <div className='heroProductQuantityStock'>
                         <div className='heroProductQuantity'>
                             <p>Quantity</p>
-                            <p>1</p>
+                            <div className='qunatityInput'>
+                            <input type="number" defaultValue={1} min={1} max={Number(heroProduct?.inStock)}/>
+                            </div>
                         </div>
                         <div className='heroProductStock'>
                             <p>InStoke</p>
                             <p>{heroProduct?.inStock}</p>
                         </div>
                     </div>
-                    <button>
-                        + Add to cart
+                    <button className='addToCart'>
+                    <MdOutlineAddCircle />&nbsp;Add to cart
                     </button>
                 
             </div>
