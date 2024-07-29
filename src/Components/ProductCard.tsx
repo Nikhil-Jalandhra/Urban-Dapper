@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
 import './ProductCard.css'
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 
 function ProductCard({item}) {
+
   return (
     <div>
       <div className="productCardContainer">
@@ -9,8 +11,7 @@ function ProductCard({item}) {
             <img src={item.image} className='productImage' alt={item.title} />
         </div>
 
-        <div className='productCardButton'>View Product</div>
-
+        <Link to={`/shop/product/${item.category}/${item.id}`}><div className='productCardButton'>View Product</div></Link>
         <div className='productDetail'>    
             <h2 className='productDetailMargin'>{item.title.slice(0,20)}...</h2>
             <div className='productPriceContainer productDetailMargin'>

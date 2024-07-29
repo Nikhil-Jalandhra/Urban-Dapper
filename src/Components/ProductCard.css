@@ -35,6 +35,7 @@
 .productCardButton {
     width: 250px;
     height: 40px;
+    color: black;
     background-color: white;
     display: flex;
     align-items: center;
