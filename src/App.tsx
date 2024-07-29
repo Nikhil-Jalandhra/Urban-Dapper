@@ -6,15 +6,17 @@ import About from "./Pages/About"
 import Loader from "./Components/Loader"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { useEffect, useState } from "react"
+import Shop from "./Pages/Shop"
+import ProductSummary from "./Pages/ProductSummary"
 
 
 function App() {
 
   useEffect(() => {
+    const timer = Math.floor(Math.random() * (3000 - 1000 + 1) + 1000 )
     setTimeout(()=>{
       setLoaderFalse(false)
-      console.log("helo")
-    }, 3000) 
+    }, timer) 
   },);
 
   const [loaderFalse, setLoaderFalse] = useState(true);
@@ -27,6 +29,8 @@ function App() {
         <Routes>
           <Route element={<Home/>} path="/"/> 
           <Route element={<About/>} path="/about"/> 
+          <Route element={<Shop/>} path="/shop"/>
+          <Route element={<ProductSummary/>} path="/shop/product/:category/:id" />
         </Routes>
       <Footer/>
     </Router>
