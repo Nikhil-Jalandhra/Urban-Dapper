@@ -7,6 +7,7 @@ import Loader from "./Components/Loader"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { useEffect, useState } from "react"
 import Shop from "./Pages/Shop"
+import ProductSummary from "./Pages/ProductSummary"
 
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
         <Routes>
           <Route element={<Home/>} path="/"/> 
           <Route element={<About/>} path="/about"/> 
-          <Route element={<Shop/>} path="/shop"/> 
+          <Route element={<Shop/>} path="/shop"/>
+          <Route element={<ProductSummary/>} path="/shop/product/:category/:id" />
         </Routes>
       <Footer/>
     </Router>
