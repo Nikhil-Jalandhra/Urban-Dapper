@@ -1,0 +1,128 @@
+.footerContainer {
+    width: 100%;
+    height: 50vh;
+    background-color: gainsboro;
+    display: flex;
+}
+
+.fourDiv {
+    width: 25%;
+    height: 100%;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: 22px;
+}
+
+/* First box */
+
+.footerBoxFirst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerLogo {
+    width: 60px;
+}
+
+.footerLogoText {
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+
+.firstBoxFirstLine {
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    padding-top: 5px;
+}
+
+.firstBoxSecondLine {
+    padding-top: 5px;
+}
+
+.firstBoxSecondLine a{
+    text-decoration: none;
+    cursor: pointer;
+    color: firebrick;
+    font-size: 25px;
+}
+
+.copyRightIcon {
+    font-size: 12px;
+}
+
+/* Second box */
+
+.footerBoxSecond {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerBoxSecond p {
+    padding-top: 5px;
+    letter-spacing: 1px;
+}
+
+.secondBoxFirstLine {
+    display: flex;
+    align-items: center;
+    padding: 1px;
+}
+
+.locationIcon {
+    font-size: 20px;
+}
+
+/* Third box */
+
+.footerBoxThird {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerBoxThird p {
+    padding-top: 15px;
+}
+.footerInputContainer {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: #757575;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin-top: 20px;
+}
+
+.footerInput {
+    width: 180px;
+    outline: none;
+    border: none;
+    /* background-color: olivedrab; */
+    
+}
+
+/* Fourth box */
+
+.footerBoxFourth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerIconContainer {
+    display: flex;
+    padding-top: 20px;
+    font-size: 30px;
+
+}
+
+.footerIconContainer p {
+    padding: 0 10px;
+}

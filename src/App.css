@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "Monigue";
+    src: url(../../Public/fontStyle/Heading.otf) format("opentype");
+}
+
+*{
+    margin: 0;
+    outline: 0;
+    user-select: none;
+    font-family: "Monigue";
+}
