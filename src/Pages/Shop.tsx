@@ -11,12 +11,16 @@ function Shop() {
   const [finalProductsData, setFinalProductsData] = useState(productData);
   const [loader, setLoader] = useState(true);
 
+  const currentlocation = location.pathname
+  
   useEffect(() => {
-    const timer = Math.floor(Math.random() * (3000 - 1000 + 1) + 1000 )
+    setFilterCategory(currentlocation.slice(6))
+    const timer = Math.floor(Math.random() * (2000 - 1000 + 1) + 1000 )
     filterFunction()
     setTimeout(() => {
       setLoader(false)
-    }, timer);
+    }, timer)
+
   }, [filterCategory]);
 
   const  setFilterValue = (e) => {

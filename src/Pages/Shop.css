@@ -39,6 +39,14 @@
     letter-spacing: 1px;
 }
 
+.productsFilter button:hover {
+    background-color: gainsboro;
+}
+
+.productsFilter a {
+    text-decoration: none;
+}
+
 .shopContainer {
     width: 100%;
     display: grid;
