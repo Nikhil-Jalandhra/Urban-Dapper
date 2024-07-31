@@ -50,6 +50,7 @@
 .shopContainer {
     width: 100%;
     display: grid;
+    justify-content: center;
     grid-template-areas: "cards cards cards cards";
     padding: 0 100px;
 }
