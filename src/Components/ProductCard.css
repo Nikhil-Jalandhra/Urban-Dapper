@@ -3,13 +3,11 @@
     width: 280px;
     height: 350px;
     background-color: gainsboro;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
     font-size: 15px;
     letter-spacing: 1px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 5px;
+    margin: 25px 25px;
 }
 
 .productImageContainer {
@@ -17,10 +15,16 @@
     height: 80%;
 }
 
+
 .productImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.productCardContainer:hover .productImage {
+    transform: scale(1.1);
 }
 
 @keyframes  productCardButtonAnimation {

@@ -1,0 +1,43 @@
+.blogCardContainer {
+    width: 350px;
+    height: 400px;
+    background-color: gainsboro;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 30px;
+}
+
+.blogImageContainer {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.blogImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.blogCardContainer:hover .blogImage {
+    transform: scale(1.1);
+}
+
+.blogDetailsContainer {
+    padding: 0 15px;
+}
+
+
+.blogDetailsContainer p:nth-child(1) {
+    padding: 15px 0;
+}
+
+.blogDetailsContainer p:nth-child(1) span {
+    color: crimson;
+}
+
+.blogDetailsContainer p:nth-child(3) {
+    padding: 10px 0;
+}

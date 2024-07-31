@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { useEffect, useState } from "react"
 import Shop from "./Pages/Shop"
 import ProductSummary from "./Pages/ProductSummary"
+import Blog from "./Pages/Blog"
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route element={<About/>} path="/about"/>
           <Route element={<Shop/>} path="/shop/:category"/>
           <Route element={<ProductSummary/>} path="/shop/product/:category/:id" />
+          <Route element={<Blog/>} path="/blog"/>
         </Routes>
       <Footer/>
     </Router>
