@@ -1,6 +1,6 @@
 .heroProductContainer {
     width: 100%;
-    height: 100vh;
+    height: 88vh;
     display: flex;
 }
 
@@ -14,7 +14,7 @@
 
 .productSummaryImage {
     width: 500px;
-    height: 600px;
+    height: 500px;
     overflow: hidden;
     border-radius: 10px;
     background-color: rgb(239, 239, 239);
@@ -32,11 +32,14 @@
     display: flex;
     flex-direction: column;
     padding: 80px 0px 10px 20px;
+
 }
 
 .heroProductDetails h1 {
     font-size: 50px;
     letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-decoration: underline;
 }
 
 .heroProductPrice {
@@ -49,7 +52,7 @@
 .heroProductPrice p {
     display: flex;
     align-items: center;
-    margin: 15px 0px;
+    margin: 20px 0px;
 }
 
 .heroProductPrice p:nth-child(2) {
@@ -60,12 +63,68 @@
 
 .heroProductDescription {
     width: 600px;
+    font-size: 25px;
+    margin-bottom: 25px;
 }
 
 .heroProductQuantityStock {
     display: flex;
+    margin-bottom: 15px;
 }
 
 .heroProductQuantity {
-    
+    width: 100px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heroProductQuantity p {
+    font-size: 25px;
+
+}
+
+.heroProductStock {
+    margin-left: 10px;
+    width: 100px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroProductStock p {
+    font-size: 25px;
+}
+
+.heroProductStock p:nth-child(2) {
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+.qunatityInput {
+    width: 60%;
+    height: 60%;
+}
+
+.qunatityInput input {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    border: 1px solid rgb(168, 168, 168);
+    font-size: 20px;
+}
+
+.addToCart {
+    width: 220px;
+    height: 60px;
+    font-size: 25px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 10px;
 }

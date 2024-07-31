@@ -23,7 +23,7 @@
     justify-content: center;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 25;
     background-color: white;
 }
 
@@ -37,6 +37,14 @@
     margin: 0 10px;
     border-radius: 10px;
     letter-spacing: 1px;
+}
+
+.productsFilter button:hover {
+    background-color: gainsboro;
+}
+
+.productsFilter a {
+    text-decoration: none;
 }
 
 .shopContainer {

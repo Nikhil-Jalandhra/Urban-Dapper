@@ -17,7 +17,7 @@ function NavBar() {
     },
     {
       name: "Shop",
-      link: "/shop"
+      link: "/shop/All"
     },
     {
       name: "Blog",
