@@ -7,6 +7,39 @@ import Loader from '../Components/Loader';
 
 function Shop() {
 
+  const filterLink = [
+    {
+      link: "/shop/All",
+      value: "All",
+      text: "All"
+    },
+    {
+      link: "/shop/Belts",
+      value: "Belts",
+      text: "Belts"
+    },
+    {
+      link: "/shop/Jackets",
+      value: "Jacktes",
+      text: "Jacktes"
+    },
+    {
+      link: "/shop/Shoes",
+      value: "Shoes",
+      text: "Shoes"
+    },
+    {
+      link: "/shop/T-Shirts",
+      value: "T-Shirts",
+      text: "T-Shirts"
+    },
+    {
+      link: "/shop/Wallets",
+      value: "Wallets",
+      text: "Wallets"
+    },
+  ]
+
   const [filterCategory, setFilterCategory] = useState("All");
   const [finalProductsData, setFinalProductsData] = useState(productData);
   const [loader, setLoader] = useState(true);
@@ -42,12 +75,9 @@ function Shop() {
     <div>
       <div className='productCardsContainer'>
         <div className='productsFilter'>
-          <Link to={`/shop/All`}><button value="All" onClick={setFilterValue}>All</button></Link> 
-          <Link to={`/shop/Belts`}><button value="Belts" onClick={setFilterValue} >Belts</button></Link> 
-          <Link to={`/shop/Jackets`}><button value="Jackets" onClick={setFilterValue} >Jackets</button></Link> 
-          <Link to={`/shop/Shoes`}><button value="Shoes" onClick={setFilterValue} >Shoes</button></Link> 
-          <Link to={`/shop/T-Shirts`}><button value="T-Shirts" onClick={setFilterValue} >T-Shirts</button></Link>
-          <Link to={`/shop/Wallets`}><button value="Wallets" onClick={setFilterValue} >Wallets</button></Link> 
+         {filterLink.map((item)=> (
+          <Link to={item.link} onClick={setFilterValue} ><button value={item.value}>{item.text}</button></Link>
+         ))} 
         </div> 
         {loader ? <Loader/> :
           <div className="shopContainer">
