@@ -37,14 +37,11 @@
     margin: 0 10px;
     border-radius: 10px;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 .productsFilter button:hover {
     background-color: gainsboro;
-}
-
-.productsFilter a {
-    text-decoration: none;
 }
 
 .shopContainer {

@@ -9,6 +9,8 @@ import { useEffect, useState } from "react"
 import Shop from "./Pages/Shop"
 import ProductSummary from "./Pages/ProductSummary"
 import Blog from "./Pages/Blog"
+import BlogSummary from "./Pages/BlogSummary"
+import Contact from "./Pages/Contact"
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route element={<Shop/>} path="/shop/:category"/>
           <Route element={<ProductSummary/>} path="/shop/product/:category/:id" />
           <Route element={<Blog/>} path="/blog"/>
+          <Route element={<BlogSummary/>} path="/blog/:blogId/:title"/>
+          <Route element={<Contact/>} path="/contact"/>
         </Routes>
       <Footer/>
     </Router>
