@@ -44,11 +44,15 @@
     justify-content: center;
     cursor: pointer;
     border-radius: 10px;
-    transition: 0.8s;
 }
 
 .navLinkContainer:hover {
+    transition: 0.8s;
     background-color: rgb(234, 234, 234);
+}
+
+.navLinkActiveCss {
+    background-color: rgb(156, 156, 156);
 }
 
 .ccContainer {

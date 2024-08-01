@@ -1,34 +1,49 @@
 import "./NavBar.css"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../Public/Logo/OnlyLogo.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
+import { useEffect, useState } from "react";
 
 function NavBar() {
 
   const navLink = [
     {
       name: "Home",
-      link: "/"
+      link: "/",
+      isActive: false
     },
     {
       name: "About",
-      link: "/about"
+      link: "/about",
+      isActive: false
     },
     {
       name: "Shop",
-      link: "/shop/All"
+      link: "/shop/All",
+      isActive: false
     },
     {
       name: "Blog",
-      link: "/blog"
+      link: "/blog",
+      isActive: false
     },
     {
       name: "Contact",
-      link: "/Contact"
+      link: "/Contact",
+      isActive: false
     },
   ]
 
+  const location = useLocation()
+
+  const [activeLink, setActiveLink] = useState("/");
+
+  useEffect(() => {
+    setActiveLink(location.pathname)
+    console.log(location.pathname)
+  }, [activeLink,location]);
+  
   return (
     <div>
       <div className="navbar">
@@ -48,7 +63,7 @@ function NavBar() {
           {
             navLink.map((item,index)=> (
               <Link key={index} to={item.link}>
-                <div className="navLinkContainer">
+                <div className={`navLinkContainer ${activeLink === item.link ? "navLinkActiveCss" : ""}`}>
                   <p>{item.name}</p>
                 </div>
               </Link>
