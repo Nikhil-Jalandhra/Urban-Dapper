@@ -11,27 +11,22 @@ function NavBar() {
     {
       name: "Home",
       link: "/",
-      isActive: false
     },
     {
       name: "About",
       link: "/about",
-      isActive: false
     },
     {
       name: "Shop",
       link: "/shop/All",
-      isActive: false
     },
     {
       name: "Blog",
       link: "/blog",
-      isActive: false
     },
     {
       name: "Contact",
       link: "/Contact",
-      isActive: false
     },
   ]
 
@@ -41,7 +36,6 @@ function NavBar() {
 
   useEffect(() => {
     setActiveLink(location.pathname)
-    console.log(location.pathname)
   }, [activeLink,location]);
   
   return (

@@ -1,5 +1,5 @@
 import './Shop.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ProductCard from '../Components/ProductCard';
 import productData from '../Database/ProductDatabase';
 import { useEffect, useState } from 'react';
@@ -42,13 +42,14 @@ function Shop() {
 
   const [filterCategory, setFilterCategory] = useState("All");
   const [finalProductsData, setFinalProductsData] = useState(productData);
+  const [currentloaction, setCurrentloaction] = useState("shop/All");
   const [loader, setLoader] = useState(true);
-
-  const currentlocation = location.pathname
+  const currentLinklocation = useLocation()
   
   useEffect(() => {
-    setFilterCategory(currentlocation.slice(6))
+    setFilterCategory(currentLinklocation.pathname.slice(6))
     const timer = Math.floor(Math.random() * (2000 - 1000 + 1) + 1000 )
+    setCurrentloaction(currentLinklocation.pathname)
     filterFunction()
     setTimeout(() => {
       setLoader(false)
@@ -76,7 +77,7 @@ function Shop() {
       <div className='productCardsContainer'>
         <div className='productsFilter'>
          {filterLink.map((item)=> (
-          <Link to={item.link} onClick={setFilterValue} ><button value={item.value}>{item.text}</button></Link>
+          <Link to={item.link} onClick={setFilterValue} ><button className={`${currentloaction === item.link ? "filterLinkActiveCss": ""}`} value={item.value}>{item.text}</button></Link>
          ))} 
         </div> 
         {loader ? <Loader/> :
