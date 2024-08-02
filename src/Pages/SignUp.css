@@ -1,0 +1,70 @@
+.signUpContainer {
+    width: 100%;
+    height: 88vh;
+    display: flex;
+}
+
+.signUpTwinsContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signUpImageContainer {
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.signUpImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.signUpInputContianer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+}
+
+.signUpInputContianer p {
+    margin: 20px 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.signUpInputTwins {
+    width: 100%;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.signUpInputTwins input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 5px 20px;
+    letter-spacing: 1px;
+}
+
+.signUpInputContianer button {
+    width: 100%;
+    height: 60px;
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+.signUpInputContianer p a {
+    text-decoration: underline;
+    color: crimson;
+}
