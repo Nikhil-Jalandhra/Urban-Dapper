@@ -26,7 +26,7 @@ function NavBar() {
     },
     {
       name: "Contact",
-      link: "/Contact",
+      link: "/contact",
     },
   ]
 
@@ -68,7 +68,7 @@ function NavBar() {
         {/* contact & cart here */}
 
         <div className="ccContainer">
-          <div className="ccIcon"><BsPersonCircle /></div>
+          <Link to="/login"><div className={`ccIcon ${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}><BsPersonCircle /></div></Link>
           <div className="ccIcon"><HiMiniShoppingCart /></div>
         </div>
 

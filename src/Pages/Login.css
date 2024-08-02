@@ -1,0 +1,70 @@
+.loginContainer {
+    width: 100%;
+    height: 88vh;
+    display: flex;
+}
+
+.loginTwinsContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginImageContainer {
+    width: 70%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.loginImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.loginInputContianer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginInputContianer p {
+    margin: 20px 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.loginInputTwins {
+    width: 100%;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.loginInputTwins input {
+    letter-spacing: 1px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 5px 20px;
+}
+
+.loginInputContianer button {
+    width: 100%;
+    height: 60px;
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+.loginInputContianer p a {
+    text-decoration: underline;
+    color: crimson;
+}

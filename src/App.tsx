@@ -11,6 +11,8 @@ import ProductSummary from "./Pages/ProductSummary"
 import Blog from "./Pages/Blog"
 import BlogSummary from "./Pages/BlogSummary"
 import Contact from "./Pages/Contact"
+import Login from "./Pages/Login"
+import SignUp from "./Pages/SignUp"
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
           <Route element={<Blog/>} path="/blog"/>
           <Route element={<BlogSummary/>} path="/blog/:blogId/:title"/>
           <Route element={<Contact/>} path="/contact"/>
+          <Route element={<Login/>} path="/login"/>
+          <Route element={<SignUp/>} path="/signup"/>
         </Routes>
       <Footer/>
     </Router>
