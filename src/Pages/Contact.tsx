@@ -32,7 +32,7 @@ function Contact() {
                   <div className='inputTwins'><input type="text" placeholder='Your Email' /></div>
               </div>
               <textarea name="" id="" placeholder='Type here'></textarea>
-              <button>Submit</button>
+              <button>Submit </button>
           </div>
         </div>
 
