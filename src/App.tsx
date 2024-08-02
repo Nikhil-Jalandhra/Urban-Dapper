@@ -13,7 +13,7 @@ import BlogSummary from "./Pages/BlogSummary"
 import Contact from "./Pages/Contact"
 import Login from "./Pages/Login"
 import SignUp from "./Pages/SignUp"
-
+import Cart from "./Components/Cart"
 
 function App() {
 
@@ -31,6 +31,7 @@ function App() {
       {loaderFalse ? <Loader/> : 
     <Router>
       <NavBar/>
+      <Cart/>
         <Routes>
           <Route element={<Home/>} path="/"/> 
           <Route element={<About/>} path="/about"/>
