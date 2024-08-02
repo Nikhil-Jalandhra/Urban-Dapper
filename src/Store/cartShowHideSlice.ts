@@ -6,13 +6,14 @@ export const cartShowHideSlice = createSlice({
     name: "cartToogle",
     initialState,
     reducers: {
-        cartToogle: (state) => {
-            state != state 
+        cartToogleFunction: (state, action) => {
+            console.log(action.payload)
+           return action.payload
         }
     }
 })
 
 
-export const { cartToogle } = cartShowHideSlice.actions
+export const { cartToogleFunction } = cartShowHideSlice.actions
 
 export default cartShowHideSlice.reducer
