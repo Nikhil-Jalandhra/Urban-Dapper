@@ -4,8 +4,14 @@ import logo from "../../Public/Logo/OnlyLogo.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 import { useEffect, useState } from "react";
+import { cartToogleFunction } from "../Store/cartShowHideSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function NavBar() {
+
+ const dispatch =  useDispatch()
+
+  const toogleState = useSelector((state) => state.cartToogle)
 
   const navLink = [
     {
@@ -29,6 +35,10 @@ function NavBar() {
       link: "/contact",
     },
   ]
+  
+  const toogleFunctionality = () => {
+    dispatch(cartToogleFunction(!toogleState))
+  }
 
   const location = useLocation()
 
@@ -69,7 +79,8 @@ function NavBar() {
 
         <div className="ccContainer">
           <Link to="/login"><div className={`ccIcon ${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}><BsPersonCircle /></div></Link>
-          <div className="ccIcon"><HiMiniShoppingCart /></div>
+
+          <div className="ccIcon" onClick={toogleFunctionality}><HiMiniShoppingCart /></div>
         </div>
 
       </div>
