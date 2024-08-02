@@ -44,6 +44,10 @@
     background-color: gainsboro;
 }
 
+.filterLinkActiveCss {
+    background-color: rgb(212, 212, 212);
+}
+
 .shopContainer {
     width: 100%;
     display: grid;
