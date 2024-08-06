@@ -12,8 +12,8 @@
 }
 
 .widthChange {
-    right: -100%;
-    /* width: 0; */
+    right: -35%;
+    width: 0;
     opacity: 0;
 }
 
