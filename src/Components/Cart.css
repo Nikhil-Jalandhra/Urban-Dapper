@@ -6,13 +6,13 @@
     top: 0;
     right: 0;
     z-index: 30;
-    transition: 1s;
+    transition: 1s ease-in-out;
     /* opacity: 0.5; */
     
 }
 
 .widthChange {
-    /* right: -30vh; */
+    right: -100%;
     /* width: 0; */
     opacity: 0;
 }
