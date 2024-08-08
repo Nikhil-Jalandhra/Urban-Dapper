@@ -3,13 +3,29 @@ import { useParams } from "react-router-dom";
 import productData from "../Database/ProductDatabase";
 import { MdOutlineCurrencyRupee} from "react-icons/md";
 import { MdOutlineAddCircle } from "react-icons/md";
+import { useDispatch } from 'react-redux';
+import { addDetails } from '../Store/cartDetailSlice';
+import { useState } from 'react';
+import { cartFinalPrice } from '../Store/cartItemPriceSlice';
+import { cartToogleFunction } from '../Store/cartShowHideSlice';
 
 function ProductSummary() {
 
     const {id} = useParams()
-
+    const dispatch = useDispatch()
     const heroProduct = productData.find(item => item.id === Number(id))
+    const [productQuantity, setProductQuantity] = useState(1);
 
+    const productAddToCart = (e) => {
+        e.preventDefault()
+        const finalProduct = {productQuantity, ...heroProduct}
+        dispatch(addDetails(finalProduct))
+        dispatch(cartFinalPrice(heroProduct?.newPrice * Number(productQuantity)))
+        dispatch(cartToogleFunction(true))
+        setProductQuantity(1)
+    }
+
+    
   return (
     <div>
         <div className="heroProductContainer">
@@ -20,33 +36,39 @@ function ProductSummary() {
                     </div>
                 </div>
 
-
-                <div className='heroProductDetails'>
-                    <h1>{heroProduct?.title}</h1>
-                    <div className='heroProductPrice'>
-                        <p><MdOutlineCurrencyRupee/>{heroProduct?.newPrice} INR</p>
-                        <p><MdOutlineCurrencyRupee/>{heroProduct?.oldPrice} INR</p>
-                    </div>
-                    <div className='heroProductDescription'>
-                    <p>{heroProduct?.description}</p>
-                    </div>
-                    <div className='heroProductQuantityStock'>
-                        <div className='heroProductQuantity'>
-                            <p>Quantity</p>
-                            <div className='qunatityInput'>
-                            <input type="number" defaultValue={1} min={1} max={Number(heroProduct?.inStock)}/>
+                <form onSubmit={productAddToCart}>
+                    <div className='heroProductDetails'>
+                        <h1>{heroProduct?.title}</h1>
+                        <div className='heroProductPrice'>
+                            <p><MdOutlineCurrencyRupee/>{heroProduct?.newPrice} INR</p>
+                            <p><MdOutlineCurrencyRupee/>{heroProduct?.oldPrice} INR</p>
+                        </div>
+                        <div className='heroProductDescription'>
+                        <p>{heroProduct?.description}</p>
+                        </div>
+                        <div className='heroProductQuantityStock'>
+                            <div className='heroProductQuantity'>
+                                <p>Quantity</p>
+                                <div className='qunatityInput'>
+                                <input 
+                                    type="number" 
+                                    onChange={(e)=>setProductQuantity(Number(e.target.value))} 
+                                    value={productQuantity} 
+                                    min={1} 
+                                    max={Number(heroProduct?.inStock)}/>
+                                </div>
+                            </div>
+                            <div className='heroProductStock'>
+                                <p>InStoke</p>
+                                <p>{heroProduct?.inStock}</p>
                             </div>
                         </div>
-                        <div className='heroProductStock'>
-                            <p>InStoke</p>
-                            <p>{heroProduct?.inStock}</p>
-                        </div>
-                    </div>
-                    <button className='addToCart'>
-                    <MdOutlineAddCircle />&nbsp;Add to cart
-                    </button>
-                
-            </div>
+                        <button className='addToCart' type='submit'>
+                        <MdOutlineAddCircle />&nbsp;Add to cart
+                        </button>
+                    
+                </div>
+            </form>
         </div>
     </div>
   );

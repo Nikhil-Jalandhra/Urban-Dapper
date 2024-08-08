@@ -37,6 +37,7 @@
 
 .heroProductDetails h1 {
     font-size: 50px;
+    text-wrap: nowrap;
     letter-spacing: 3px;
     margin-bottom: 20px;
     text-decoration: underline;
@@ -46,6 +47,7 @@
     width: 300px;
     display: flex;
     font-size: 28px;
+    text-wrap: nowrap;
     letter-spacing: 2px;
 }
 
@@ -100,8 +102,9 @@
 }
 
 .heroProductStock p:nth-child(2) {
-    margin-top: 18px;
     font-size: 20px;
+    background-color: gainsboro;
+    padding: 14px 20px;
 }
 
 .qunatityInput {
@@ -127,4 +130,10 @@
     justify-content: center;
     border-radius: 5px;
     margin-top: 10px;
+    transition: 0.4s linear;
+}
+
+.addToCart:hover {
+    background-color: black;
+    color: white;
 }

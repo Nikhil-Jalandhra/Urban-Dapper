@@ -1,28 +1,66 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react";
 
 
- const initialState = [
-    {
-        id: 1,
-        title: "heading",
-        image: "/Images/t-shirt1.jpg",
-        price: 100,
-        quantity: 0
-    }
- ]
+ const initialState = []
 
 export const cartDetailSlice = createSlice({
     name: "cartDetail",
     initialState,
     reducers: {
         addDetails: (state, action) => {
-            const {id, title, image, price, quantity} = action.payload
-            console.log(action.payload)
-            state.push({id, title,image,price,quantity})
-        }
+            const {id, title, image, newPrice, productQuantity, inStock} = action.payload
+            const existingItem = state.find(item => item.id === Number(id))
+            if (existingItem) {
+                const totalQuatity = existingItem.productQuantity + productQuantity
+                
+                if (totalQuatity <= inStock) {
+                    existingItem.productQuantity += productQuantity
+                }
+                else if (existingItem.productQuantity === inStock) {
+                    alert("we have only " + inStock + " piece at this time")
+                }
+                else {
+                    alert("you can add " + (inStock-existingItem.productQuantity) + " more")
+                }
+
+            }else {
+                state.push({id, title, image, newPrice, productQuantity, inStock})
+            }
+        },
+        incrementQuantity: (state,action)=> {
+            const id = Number(action.payload)
+            const updatedquantity = state.find((item) => item.id === id)
+            if (updatedquantity.productQuantity < updatedquantity.inStock) {
+                updatedquantity.productQuantity += 1
+            }else{
+                console.log("helo")
+            }
+        },
+        decrementQuantity: (state,action)=> {
+            const id = Number(action.payload)
+            const updatedquantity = state.find((item) => item.id === id)
+            if (updatedquantity?.productQuantity > 1 ) {
+                updatedquantity.productQuantity -= 1
+                console.log(updatedquantity.productQuantity);
+                
+            }else{
+                const index = state.findIndex(item => item.id === Number(updatedquantity?.id));
+                if (index !== -1) {
+                    state.splice(index, 1);
+                }
+            }
+        },
+        deleteItem: (state, action) => {
+            const itemId = action.payload
+            const index = state.findIndex(item => item.id === Number(itemId));
+            if (index !== -1) {
+                state.splice(index, 1);
+            }
+        }        
     }
 })
 
-export const { addDetails } = cartDetailSlice.actions
+export const { addDetails, incrementQuantity, decrementQuantity, deleteItem } = cartDetailSlice.actions
 
 export default cartDetailSlice.reducer
