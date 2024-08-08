@@ -3,7 +3,7 @@ import { SlClose } from "react-icons/sl";
 import { useDispatch, useSelector } from 'react-redux';
 import { cartToogleFunction } from '../Store/cartShowHideSlice';
 import { FaRupeeSign } from "react-icons/fa";
-import { deleteItem } from '../Store/cartDetailSlice';
+import { decrementQuantity, deleteItem, incrementQuantity } from '../Store/cartDetailSlice';
 import cartNoItem from '../../Public/pageImages/cartNoItem.png'
 import { useEffect, useState } from 'react';
 
@@ -11,7 +11,6 @@ function Cart() {
 
   const inVisibleCard =  useSelector((state) => state.cartToogle);
   const cartTotalItem =  useSelector((state) => state.cartDetail);
-  // const cartTotalPrice =  useSelector((state) => state.cartFinalPrice);
   const [finalPrice, setFinalPrice] = useState(0);
   const dispatch = useDispatch() 
 
@@ -24,15 +23,20 @@ function Cart() {
   }
 
   const cartCalculation = () => {
-    let allset = []
-    cartTotalItem.map((item) => {
-      allset.push(item.newPrice * item.productQuantity)  
-    })
-    // allset.reduce()
+    const totalPrice = cartTotalItem.reduce((total, item) => total + (item.newPrice * item.productQuantity), 0);
+
+    setFinalPrice(totalPrice)
+  }
+
+  const increment = (id) => {
+    dispatch(incrementQuantity(id))
+  }
+  
+  const decrement = (id) => {
+    dispatch(decrementQuantity(id))
   }
   
   useEffect(() => {
-    dispatch(cartToogleFunction(true))
     cartCalculation()
   }, [cartTotalItem])
 
@@ -63,7 +67,9 @@ function Cart() {
                   <button value={item.id} onClick={removeItemFunction}>Remove</button>
                 </div>
                 <div className='cartItemInput'>
-                  <input type="number" value={item.productQuantity}  min={1} max={item.inStock} />
+                  <button  onClick={() => decrement(item.id)}>-</button>
+                  <p>{item.productQuantity}</p>
+                  <button onMouseDown={() => increment(item.id)}>+</button>
                 </div>
               </div>
           ))}

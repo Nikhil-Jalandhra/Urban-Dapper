@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addDetails } from '../Store/cartDetailSlice';
 import { useState } from 'react';
 import { cartFinalPrice } from '../Store/cartItemPriceSlice';
+import { cartToogleFunction } from '../Store/cartShowHideSlice';
 
 function ProductSummary() {
 
@@ -20,6 +21,7 @@ function ProductSummary() {
         const finalProduct = {productQuantity, ...heroProduct}
         dispatch(addDetails(finalProduct))
         dispatch(cartFinalPrice(heroProduct?.newPrice * Number(productQuantity)))
+        dispatch(cartToogleFunction(true))
         setProductQuantity(1)
     }
 

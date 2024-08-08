@@ -1,16 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react";
 
 
- const initialState = [
-    {
-        id: 1,
-        title: "Comfort Fit T-shirt",
-        newPrice: 1499,
-        image: "/Images/ProductImages/jacket4.jpg",
-        inStock: 50,
-        productQuantity: 1,
-    },
- ]
+ const initialState = []
 
 export const cartDetailSlice = createSlice({
     name: "cartDetail",
@@ -36,6 +28,29 @@ export const cartDetailSlice = createSlice({
                 state.push({id, title, image, newPrice, productQuantity, inStock})
             }
         },
+        incrementQuantity: (state,action)=> {
+            const id = Number(action.payload)
+            const updatedquantity = state.find((item) => item.id === id)
+            if (updatedquantity.productQuantity < updatedquantity.inStock) {
+                updatedquantity.productQuantity += 1
+            }else{
+                console.log("helo")
+            }
+        },
+        decrementQuantity: (state,action)=> {
+            const id = Number(action.payload)
+            const updatedquantity = state.find((item) => item.id === id)
+            if (updatedquantity?.productQuantity > 1 ) {
+                updatedquantity.productQuantity -= 1
+                console.log(updatedquantity.productQuantity);
+                
+            }else{
+                const index = state.findIndex(item => item.id === Number(updatedquantity?.id));
+                if (index !== -1) {
+                    state.splice(index, 1);
+                }
+            }
+        },
         deleteItem: (state, action) => {
             const itemId = action.payload
             const index = state.findIndex(item => item.id === Number(itemId));
@@ -46,6 +61,6 @@ export const cartDetailSlice = createSlice({
     }
 })
 
-export const { addDetails, deleteItem } = cartDetailSlice.actions
+export const { addDetails, incrementQuantity, decrementQuantity, deleteItem } = cartDetailSlice.actions
 
 export default cartDetailSlice.reducer
