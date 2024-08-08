@@ -7,7 +7,6 @@ export const cartShowHideSlice = createSlice({
     initialState,
     reducers: {
         cartToogleFunction: (state, action) => {
-            console.log(action.payload)
            return action.payload
         }
     }
