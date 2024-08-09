@@ -5,7 +5,8 @@ import { cartToogleFunction } from '../Store/cartShowHideSlice';
 import { FaRupeeSign } from "react-icons/fa";
 import { decrementQuantity, deleteItem, incrementQuantity } from '../Store/cartDetailSlice';
 import cartNoItem from '../../Public/pageImages/cartNoItem.png'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 
 function Cart() {
 
@@ -13,6 +14,7 @@ function Cart() {
   const cartTotalItem =  useSelector((state) => state.cartDetail);
   const [finalPrice, setFinalPrice] = useState(0);
   const dispatch = useDispatch() 
+  const cartRef = useRef()
 
   const toogleFunction = () => {
     dispatch(cartToogleFunction(false))
@@ -38,11 +40,17 @@ function Cart() {
   
   useEffect(() => {
     cartCalculation()
+    const handler = (e) => {
+      if (!cartRef.current.contains(e.target)) {
+        dispatch(cartToogleFunction(false))
+      }
+    }
+    document.addEventListener("mousedown", handler)
   }, [cartTotalItem])
 
   return (
     <div>
-      <div className={`cartContainer ${inVisibleCard ? "" : "widthChange"}`}>
+      <div ref={cartRef} className={`cartContainer ${inVisibleCard ? "" : "widthChange"}`}>
         <div className='yourCart'>
             <p>Your Cart</p>
         <button className='cartCloseButton' onClick={toogleFunction}><SlClose /></button>
