@@ -1,8 +1,16 @@
-import homeImage from "../../Public/pageImages/homeImage1.jpg"
 import "./Home.css"
+import { Link } from "react-router-dom";
 import OurStory from "../Components/OurStory";
+import blogData from "../Database/blogDatabase";
+import product from "../Database/ProductDatabase";
+import ProductCard from "../Components/ProductCard";
+import homeImage from "../../Public/pageImages/homeImage1.jpg"
+import BlogCard from "../Components/BlogCard";
 
 function Home() {
+
+    const uniqueCategories = Array.from(new Set(product.map(item => item.category)));
+    const uniqueItem = uniqueCategories.map(uniqueCategory => product.find((item) => item.category === uniqueCategory ))
   return (
     <div>
 
@@ -29,6 +37,23 @@ function Home() {
         {/* Our story */}
 
         <OurStory/>
+
+        <div className="featuredCardContainer">
+            <Link to={"/shop/All"}><h1>Products</h1></Link>
+            <div className="cardsContainer">
+                {uniqueItem.map((item) => (<ProductCard item={item} key={item?.id}/>))}
+            </div>
+        </div>
+
+
+        <div className="featuredCardContainer">
+            <Link to={"/Blog"}><h1>Latest Blogs</h1></Link>
+            <div className="cardsContainer">
+                {blogData.map((item)=> (
+                    item.id <= 5 &&  <BlogCard item={item}/> 
+                ))}
+            </div>
+        </div>
 
     </div>
   );

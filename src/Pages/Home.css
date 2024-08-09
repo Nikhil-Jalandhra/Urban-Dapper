@@ -75,3 +75,30 @@
     animation-duration: 4s;
     overflow: hidden;
 }
+
+.featuredCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.featuredCardContainer h1 {
+    font-size: 70px;
+}
+
+.featuredCardContainer a {
+    color: black;
+}
+
+.cardsContainer{
+    width: 100%;
+    display: grid;
+    grid-template-areas: "cards cards cards cards cards";
+    overflow-y: scroll;
+}
+
+.cardsContainer::-webkit-scrollbar {
+    display: none;
+}
