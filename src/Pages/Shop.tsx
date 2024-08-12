@@ -1,4 +1,5 @@
 import './Shop.css'
+import { MouseEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ProductCard from '../Components/ProductCard';
 import productData from '../Database/ProductDatabase';
@@ -46,6 +47,7 @@ function Shop() {
   const [loader, setLoader] = useState(true);
   const currentLinklocation = useLocation()
   
+  
   useEffect(() => {
     setFilterCategory(currentLinklocation.pathname.slice(6))
     const timer = Math.floor(Math.random() * (2000 - 1000 + 1) + 1000 )
@@ -55,29 +57,18 @@ function Shop() {
       setLoader(false)
     }, timer)
 
-  }, [filterCategory]);
+  }, [filterCategory, currentLinklocation.pathname, filterFunction]);
 
-  const  setFilterValue = (e) => {
-    setFilterCategory(e.target.value)
-  }
-
-  const filterFunction = () => {
-    if(filterCategory === "All"){
-       setFinalProductsData(productData)
-      }else {
-        const data = productData.filter((item)=> (item.category === filterCategory))
-        setFinalProductsData(data)
-    }
-    setLoader(true)
-  }
-  
+  const  setFilterValue = (e: MouseEvent<HTMLButtonElement>) => {
+    setFilterCategory(e.currentTarget?.value)
+  }  
 
   return (
     <div>
       <div className='productCardsContainer'>
         <div className='productsFilter'>
          {filterLink.map((item)=> (
-          <Link to={item.link} onClick={setFilterValue} ><button className={`${currentloaction === item.link ? "filterLinkActiveCss": ""}`} value={item.value}>{item.text}</button></Link>
+          <Link to={item.link} key={item.text} ><button onClick={setFilterValue} className={`${currentloaction === item.link ? "filterLinkActiveCss": ""}`} value={item.value}>{item.text}</button></Link>
          ))} 
         </div> 
         {loader ? <Loader/> :

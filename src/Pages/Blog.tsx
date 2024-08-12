@@ -6,8 +6,8 @@ function Blog() {
   return (
     <div>
         <div className="blogContainer">
-          {blogData.map((item,index) => (
-            <BlogCard item={item} key={index}/>
+          {blogData.map((item) => (
+            <BlogCard item={item} key={item.id}/>
           ))}
 
         </div>      

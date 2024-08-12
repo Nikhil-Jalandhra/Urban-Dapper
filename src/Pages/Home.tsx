@@ -50,7 +50,7 @@ function Home() {
             <Link to={"/Blog"}><h1>Latest Blogs</h1></Link>
             <div className="cardsContainer">
                 {blogData.map((item)=> (
-                    item.id <= 5 &&  <BlogCard item={item}/> 
+                    item.id <= 5 &&  <BlogCard key={item.id} item={item}/> 
                 ))}
             </div>
         </div>

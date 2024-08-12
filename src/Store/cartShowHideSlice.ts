@@ -1,18 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = false
 
 export const cartShowHideSlice = createSlice({
-    name: "cartToogle",
+    name: "cartToggle",
     initialState,
     reducers: {
-        cartToogleFunction: (state, action) => {
+        cartToggleFunction: (state, action: PayloadAction<boolean>) => {
+            state            
            return action.payload
         }
     }
 })
 
 
-export const { cartToogleFunction } = cartShowHideSlice.actions
+export const { cartToggleFunction } = cartShowHideSlice.actions
 
 export default cartShowHideSlice.reducer

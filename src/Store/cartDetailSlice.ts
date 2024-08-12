@@ -1,7 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
- const initialState = []
+export interface dataObject {
+    id: number,
+    title: string,
+    image: string,
+    newPrice: number,
+    productQuantity: number,
+    inStock: number,
+  }
+
+ const initialState : dataObject[] = []
 
 export const cartDetailSlice = createSlice({
     name: "cartDetail",
@@ -30,7 +39,7 @@ export const cartDetailSlice = createSlice({
         incrementQuantity: (state,action)=> {
             const id = Number(action.payload)
             const updatedquantity = state.find((item) => item.id === id)
-            if (updatedquantity.productQuantity < updatedquantity.inStock) {
+            if (updatedquantity && updatedquantity.productQuantity < updatedquantity.inStock) {
                 updatedquantity.productQuantity += 1
             }else{
                 console.log("helo")
@@ -39,7 +48,7 @@ export const cartDetailSlice = createSlice({
         decrementQuantity: (state,action)=> {
             const id = Number(action.payload)
             const updatedquantity = state.find((item) => item.id === id)
-            if (updatedquantity?.productQuantity > 1 ) {
+            if (updatedquantity && updatedquantity.productQuantity > 1 ) {
                 updatedquantity.productQuantity -= 1
                 console.log(updatedquantity.productQuantity);
                 

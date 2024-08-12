@@ -1,7 +1,7 @@
 import './Cart.css'
 import { SlClose } from "react-icons/sl";
 import { useDispatch, useSelector } from 'react-redux';
-import { cartToogleFunction } from '../Store/cartShowHideSlice';
+import { cartToggleFunction } from '../Store/cartShowHideSlice';
 import { FaRupeeSign } from "react-icons/fa";
 import { decrementQuantity, deleteItem, incrementQuantity } from '../Store/cartDetailSlice';
 import cartNoItem from '../../Public/pageImages/cartNoItem.png'
@@ -10,14 +10,14 @@ import { useEffect, useRef, useState } from 'react';
 
 function Cart() {
 
-  const inVisibleCard =  useSelector((state) => state.cartToogle);
+  const inVisibleCard =  useSelector((state) => state.cartToggle);
   const cartTotalItem =  useSelector((state) => state.cartDetail);
   const [finalPrice, setFinalPrice] = useState(0);
   const dispatch = useDispatch() 
   const cartRef = useRef()
 
-  const toogleFunction = () => {
-    dispatch(cartToogleFunction(false))
+  const toggleFunction = () => {
+    dispatch(cartToggleFunction(false))
   }
   
   const removeItemFunction = (e) => {
@@ -42,7 +42,7 @@ function Cart() {
     cartCalculation()
     const handler = (e) => {
       if (!cartRef.current.contains(e.target)) {
-        dispatch(cartToogleFunction(false))
+        dispatch(cartToggleFunction(false))
       }
     }
     document.addEventListener("mousedown", handler)
@@ -53,7 +53,7 @@ function Cart() {
       <div ref={cartRef} className={`cartContainer ${inVisibleCard ? "" : "widthChange"}`}>
         <div className='yourCart'>
             <p>Your Cart</p>
-        <button className='cartCloseButton' onClick={toogleFunction}><SlClose /></button>
+        <button className='cartCloseButton' onClick={toggleFunction}><SlClose /></button>
         </div>
 
           {Number(cartTotalItem.length) ===  0 ? 

@@ -25,7 +25,7 @@ import wallet4 from "/Images/ProductImages/wallet4.jpg"
 import wallet5 from "/Images/ProductImages/wallet5.jpg"
 
 
-let product  = [
+const product  = [
     {
         id: 1,
         title: "Comfort Fit T-shirt",

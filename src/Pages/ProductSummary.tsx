@@ -6,8 +6,7 @@ import { MdOutlineAddCircle } from "react-icons/md";
 import { useDispatch } from 'react-redux';
 import { addDetails } from '../Store/cartDetailSlice';
 import { useState } from 'react';
-import { cartFinalPrice } from '../Store/cartItemPriceSlice';
-import { cartToogleFunction } from '../Store/cartShowHideSlice';
+import { cartToggleFunction } from '../Store/cartShowHideSlice';
 
 function ProductSummary() {
 
@@ -21,7 +20,7 @@ function ProductSummary() {
         const finalProduct = {productQuantity, ...heroProduct}
         dispatch(addDetails(finalProduct))
         dispatch(cartFinalPrice(heroProduct?.newPrice * Number(productQuantity)))
-        dispatch(cartToogleFunction(true))
+        dispatch(cartToggleFunction(true))
         setProductQuantity(1)
     }
 

@@ -4,7 +4,7 @@ import logo from "../../Public/Logo/OnlyLogo.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 import { useEffect, useState } from "react";
-import { cartToogleFunction } from "../Store/cartShowHideSlice";
+import { cartToggleFunction } from "../Store/cartShowHideSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function NavBar() {
@@ -37,7 +37,8 @@ function NavBar() {
   ]
   
   const toogleFunctionality = () => {
-    dispatch(cartToogleFunction(!toogleState))
+    dispatch(cartToggleFunction(!toogleState))
+    console.log("sdf");
   }
 
   const location = useLocation()
