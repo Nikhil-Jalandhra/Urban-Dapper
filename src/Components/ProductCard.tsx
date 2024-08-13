@@ -17,7 +17,6 @@ interface productCardData {
 }
 
 function ProductCard({item}: productCardData) {
-
   return (
     <div>
       <div className="productCardContainer">
