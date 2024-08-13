@@ -10,7 +10,10 @@ import BlogCard from "../Components/BlogCard";
 function Home() {
 
     const uniqueCategories = Array.from(new Set(product.map(item => item.category)));
-    const uniqueItem = uniqueCategories.map(uniqueCategory => product.find((item) => item.category === uniqueCategory ))
+    const uniqueItem = uniqueCategories
+    .map(uniqueCategory => product.find((item) => item.category === uniqueCategory ))
+    .filter((item): item is { id: number; title: string; description: string; newPrice: number; oldPrice: number; category: string; image: string; inStock: number; } => item !== undefined);
+    
   return (
     <div>
 

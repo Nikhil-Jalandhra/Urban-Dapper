@@ -4,7 +4,7 @@ import { MdOutlineCurrencyRupee } from "react-icons/md";
 import productImage from "/Images/ProductImages/wallet1.jpg"
 
 interface productCardData {
-  item?: { 
+  item: { 
     id: number;
     title: string;
     description: string;
