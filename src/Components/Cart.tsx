@@ -5,48 +5,52 @@ import { cartToggleFunction } from '../Store/cartShowHideSlice';
 import { FaRupeeSign } from "react-icons/fa";
 import { decrementQuantity, deleteItem, incrementQuantity } from '../Store/cartDetailSlice';
 import cartNoItem from '../../Public/pageImages/cartNoItem.png'
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { dataObject } from '../Store/cartDetailSlice';
+import { cartState,totalItemState } from '../Store/store';
 
 
 function Cart() {
 
-  const inVisibleCard =  useSelector((state) => state.cartToggle);
-  const cartTotalItem =  useSelector((state) => state.cartDetail);
+  const inVisibleCard =  useSelector((state: cartState) => state.cartToggle);
+  const cartTotalItem =  useSelector((state: totalItemState ) => state.cartDetail);
   const [finalPrice, setFinalPrice] = useState(0);
   const dispatch = useDispatch() 
-  const cartRef = useRef()
+  const cartRef = useRef<HTMLDivElement>(null)
 
   const toggleFunction = () => {
     dispatch(cartToggleFunction(false))
   }
   
-  const removeItemFunction = (e) => {
-    dispatch(deleteItem(e.target.value))
+  const removeItemFunction = (e: React.MouseEvent<HTMLButtonElement>) => {
+    dispatch(deleteItem(e.currentTarget.value))
   }
 
-  const cartCalculation = () => {
-    const totalPrice = cartTotalItem.reduce((total, item) => total + (item.newPrice * item.productQuantity), 0);
-
-    setFinalPrice(totalPrice)
-  }
-
-  const increment = (id) => {
+  const increment = (id: number) => {
     dispatch(incrementQuantity(id))
   }
   
-  const decrement = (id) => {
+  const decrement = (id: number) => {
     dispatch(decrementQuantity(id))
   }
   
   useEffect(() => {
-    cartCalculation()
-    const handler = (e) => {
-      if (!cartRef.current.contains(e.target)) {
+
+    const cartCalculation = () => {
+      const totalPrice = cartTotalItem.reduce((total: number, item: dataObject) => total + (item.newPrice * item.productQuantity), 0);
+  
+      setFinalPrice(totalPrice)
+    }
+
+    const handler = (e: MouseEvent) => {
+      if (!cartRef.current?.contains(e.target as Node)) {
         dispatch(cartToggleFunction(false))
       }
     }
+
+    cartCalculation()
     document.addEventListener("mousedown", handler)
-  }, [cartTotalItem])
+  }, [cartTotalItem, dispatch])
 
   return (
     <div>
@@ -64,7 +68,7 @@ function Cart() {
             <p>No item found</p>
           </div> : 
           <div className='cartItemContainer'>
-          {cartTotalItem.map((item)=> (
+          {cartTotalItem.map((item: dataObject)=> (
               <div className='cartItem' key={item.id}>
                 <div className='cartItemImageContainer'>
                   <img src={item.image} className='cartItemImage' alt="product" />

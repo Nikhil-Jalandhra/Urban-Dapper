@@ -6,12 +6,13 @@ import { HiMiniShoppingCart } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import { cartToggleFunction } from "../Store/cartShowHideSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { cartState } from "../Store/store";
 
 function NavBar() {
 
  const dispatch =  useDispatch()
 
-  const toogleState = useSelector((state) => state.cartToogle)
+  const toogleState = useSelector((state: cartState) => state.cartToggle);
 
   const navLink = [
     {
@@ -38,7 +39,6 @@ function NavBar() {
   
   const toogleFunctionality = () => {
     dispatch(cartToggleFunction(!toogleState))
-    console.log("sdf");
   }
 
   const location = useLocation()

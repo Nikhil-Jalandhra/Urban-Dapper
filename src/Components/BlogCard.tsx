@@ -1,7 +1,24 @@
 import { Link } from 'react-router-dom';
 import './BlogCard.css'
 
-function BlogCard({item}) {
+interface blogCardData {
+  item: { 
+    id: number; 
+    author: string; 
+    date: string; 
+    title1: string; 
+    title2: string; 
+    title3: string; 
+    description1: string; 
+    description2: string; 
+    description3: string; 
+    image1: string; 
+    image2: string; 
+    image3: string; 
+  }; 
+}
+
+function BlogCard({item}: blogCardData) {
 
   return (
     <div>

@@ -46,23 +46,34 @@ function Shop() {
   const [currentloaction, setCurrentloaction] = useState("shop/All");
   const [loader, setLoader] = useState(true);
   const currentLinklocation = useLocation()
-  
-  
+
   useEffect(() => {
+
+    const filterFunction = () => {
+      if(filterCategory === "All"){
+         setFinalProductsData(productData)
+        }else {
+          const data = productData.filter((item)=> (item.category === filterCategory))
+          setFinalProductsData(data)
+        }
+        setLoader(true)
+      }
+
     setFilterCategory(currentLinklocation.pathname.slice(6))
-    const timer = Math.floor(Math.random() * (2000 - 1000 + 1) + 1000 )
     setCurrentloaction(currentLinklocation.pathname)
+    
     filterFunction()
+
+    const timer = Math.floor(Math.random() * (2000 - 1000 + 1) + 1000 )
     setTimeout(() => {
       setLoader(false)
     }, timer)
-
-  }, [filterCategory, currentLinklocation.pathname, filterFunction]);
-
+  }, [filterCategory, currentLinklocation.pathname]);
+  
   const  setFilterValue = (e: MouseEvent<HTMLButtonElement>) => {
     setFilterCategory(e.currentTarget?.value)
-  }  
-
+  }
+    
   return (
     <div>
       <div className='productCardsContainer'>

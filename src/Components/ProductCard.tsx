@@ -3,7 +3,20 @@ import './ProductCard.css'
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import productImage from "/Images/ProductImages/wallet1.jpg"
 
-function ProductCard({item}) {
+interface productCardData {
+  item: { 
+    id: number,
+    title: string,
+    description: string,
+    newPrice: number,
+    oldPrice: number,
+    category: string,
+    image: string,
+    inStock: number
+  }; 
+}
+
+function ProductCard({item}: productCardData) {
 
   return (
     <div>
