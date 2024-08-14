@@ -1,5 +1,5 @@
 import "./OurTeam.css"
-import heroImg from "../../Public/pageImages/heroImg.jpg"
+import heroImg from "../../Public/pageImages/heroImg2.jpg"
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 
 function OurTeam() {
