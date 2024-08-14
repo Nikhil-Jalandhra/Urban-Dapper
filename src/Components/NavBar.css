@@ -9,16 +9,16 @@
     width: 25vw;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    font-size: 40px;
+    font-size: 35px;
+    padding-left: 20px;
 }
 
 .logo {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    user-select: none;
 }
 
 .navLink {
@@ -83,4 +83,41 @@
 
 .ccIcon:hover {
     background-color: rgb(234, 234, 234);
+}
+
+.navBarIcon {
+    display: none;
+} 
+
+.navBarIcon:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+@media screen and (max-width: 1000px) {
+    .logoContainer{
+        width: 50vw;
+        background-color: cornflowerblue;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+    .navLink {
+        display: none;
+    }
+    .navBarIcon {
+        width: 60px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 25px;
+        border-radius: 10px;
+        transition: 0.8s;
+        margin: 5px;
+    }
+    .ccContainer {
+        width: 50vw;
+        background-color: aqua;
+    }
 }
