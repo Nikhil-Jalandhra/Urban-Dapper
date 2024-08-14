@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './ProductCard.css'
 import { MdOutlineCurrencyRupee } from "react-icons/md";
-import productImage from "/Images/ProductImages/wallet1.jpg"
+import productImage from "../../Public/Images/ProductImages/wallet1.jpg"
 
 interface productCardData {
   item: { 
