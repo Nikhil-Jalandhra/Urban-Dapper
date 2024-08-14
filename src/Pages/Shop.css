@@ -55,3 +55,20 @@
     grid-template-areas: "cards cards cards cards";
     padding: 0 100px;
 }
+
+@media screen and (max-width: 1280px) {
+    .shopContainer {
+        grid-template-areas: "cards cards cards";
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .shopContainer {
+        grid-template-areas: "cards cards";
+    }
+}
+@media screen and (max-width: 500px) {
+    .shopContainer {
+        grid-template-areas: "cards";
+    }
+}

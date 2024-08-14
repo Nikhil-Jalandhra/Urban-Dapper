@@ -6,5 +6,21 @@
     justify-content: center;
     align-items: center;
     grid-template-areas: "cards cards cards";
+}
 
+@media screen and (max-width: 1200px) {
+    .blogContainer {
+        grid-template-areas: "cards cards";
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .blogContainer {
+        grid-template-areas: "cards cards";
+    }
+}
+@media screen and (max-width: 500px) {
+    .blogContainer {
+        grid-template-areas: "cards";
+    }
 }
