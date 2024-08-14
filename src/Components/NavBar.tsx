@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../Public/Logo/OnlyLogo.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import { cartToggleFunction } from "../Store/cartShowHideSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -82,6 +83,9 @@ function NavBar() {
           <Link to="/login"><div className={`ccIcon ${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}><BsPersonCircle /></div></Link>
 
           <div className="ccIcon" onClick={toogleFunctionality}><HiMiniShoppingCart /></div>
+
+          <div className="navBarIcon"><GiHamburgerMenu /></div>
+
         </div>
 
       </div>
