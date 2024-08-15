@@ -96,12 +96,12 @@
     background-color: white;
     color: #757575;
     border-radius: 15px;
-    padding: 5px 15px;
+    padding: 5px 10px;
     margin-top: 20px;
 }
 
 .footerInput {
-    width: 180px;
+    width: 200px;
     outline: none;
     border: none;
     /* background-color: olivedrab; */
