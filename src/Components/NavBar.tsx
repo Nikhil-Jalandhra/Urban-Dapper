@@ -5,15 +5,15 @@ import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useState } from "react";
-import { cartToggleFunction } from "../Store/cartShowHideSlice";
+import { cartToggleFunction } from "../Store/toggleSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { cartState } from "../Store/store";
+import { showState } from "../Store/store";
 
 function NavBar() {
 
  const dispatch =  useDispatch()
 
-  const toogleState = useSelector((state: cartState) => state.cartToggle);
+  const toogleState = useSelector((state: showState) => state.showToggle.cart);
 
   const navLink = [
     {
