@@ -19,8 +19,7 @@ function Cart() {
   const cartRef = useRef<HTMLDivElement>(null)
 
   const toggleFunction = () => {
-    dispatch(cartToggleFunction(false))
-    
+    dispatch(cartToggleFunction(false)) 
   }
   
   const removeItemFunction = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -49,8 +48,8 @@ function Cart() {
       }
     }
 
-    cartCalculation()
     document.addEventListener("mousedown", handler)
+    cartCalculation()
   }, [cartTotalItem, dispatch])
 
   return (

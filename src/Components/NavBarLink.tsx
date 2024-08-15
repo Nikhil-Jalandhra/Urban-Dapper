@@ -1,7 +1,11 @@
 import "./NavBarLink.css"
 import { Link } from "react-router-dom";
 import logo from "../../Public/Logo/LogoText.png"
-import { TbSend2 } from "react-icons/tb";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { navToggleFunction } from "../Store/toggleSlice";
+import { SlClose } from "react-icons/sl";
+import { showState } from "../Store/store";
 
 function NavBarLink() {
 
@@ -28,22 +32,39 @@ function NavBarLink() {
         },
       ]
 
+    const dispatch = useDispatch()
+    const navVisible = useSelector((state: showState) => state.showToggle.nav)
+    const responsiveNav = useRef<HTMLDivElement>(null)
+
+    const toggleFunction = () => {
+      dispatch(navToggleFunction(false)) 
+    }
+
+      useEffect(() => {
+        const handler = (e: MouseEvent) => {
+          if (!responsiveNav.current?.contains(e.target as Node)) {
+            dispatch(navToggleFunction(false))
+          }
+        }
+    
+        document.addEventListener("mousedown", handler)
+      }, [dispatch]);
+
   return (
     <div>
-      <div className="responsiveNavbar">
+      <div 
+      ref={responsiveNav} 
+      className={` ${navVisible ? "" : "responsiveNavbarHide" } responsiveNavbar`}>
+        <div className="responsiveNavClose"><SlClose onClick={toggleFunction} /></div>
         <div className="responsiveNavImage">
           <img src={logo} alt="" />
-        </div>
-        <div className="responsiveNavinput">
-         <input type="text" placeholder="This is just display" />
-         <p><TbSend2/></p>
         </div>
 
         <div className="responsiveNavLink">
           {
             navLink.map((item,index)=> (
               <Link key={index} to={item.link}>
-                    <div>
+                    <div onClick={toggleFunction}>
                       <p>{item.name}</p>
                     </div>
               </Link>

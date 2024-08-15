@@ -5,7 +5,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useState } from "react";
-import { cartToggleFunction } from "../Store/toggleSlice";
+import { cartToggleFunction, navToggleFunction } from "../Store/toggleSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { showState } from "../Store/store";
 
@@ -13,7 +13,8 @@ function NavBar() {
 
  const dispatch =  useDispatch()
 
-  const toogleState = useSelector((state: showState) => state.showToggle.cart);
+  const cartToggleState = useSelector((state: showState) => state.showToggle.cart);
+  const navToggleState = useSelector((state: showState) => state.showToggle.nav);
 
   const navLink = [
     {
@@ -38,8 +39,13 @@ function NavBar() {
     },
   ]
   
-  const toogleFunctionality = () => {
-    dispatch(cartToggleFunction(!toogleState))
+  const carttoggleFunctionality = () => {
+    dispatch(cartToggleFunction(!cartToggleState))
+  }
+
+  const navtoggleFunctionality = () => {
+    dispatch(navToggleFunction(!navToggleState))
+    
   }
 
   const location = useLocation()
@@ -82,9 +88,9 @@ function NavBar() {
         <div className="ccContainer">
           <Link to="/login"><div className={`ccIcon ${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}><BsPersonCircle /></div></Link>
 
-          <div className="ccIcon" onClick={toogleFunctionality}><HiMiniShoppingCart /></div>
+          <div className="ccIcon" onClick={carttoggleFunctionality}><HiMiniShoppingCart /></div>
 
-          <div className="navBarIcon"><GiHamburgerMenu /></div>
+          <div className="navBarIcon" onClick={navtoggleFunctionality}><GiHamburgerMenu /></div>
 
         </div>
 
