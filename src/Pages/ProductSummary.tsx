@@ -6,7 +6,7 @@ import { MdOutlineAddCircle } from "react-icons/md";
 import { useDispatch } from 'react-redux';
 import { addDetails } from '../Store/cartDetailSlice';
 import React, { useState } from 'react';
-import { cartToggleFunction } from '../Store/cartShowHideSlice';
+import { cartToggleFunction } from '../Store/toggleSlice';
 
 function ProductSummary() {
 

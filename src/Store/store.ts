@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartDetailSlice from "./cartDetailSlice";
-import cartShowHideSlice from "./cartShowHideSlice";
+import toggleSlice from "./toggleSlice";
 
-export interface cartState {
-    cartToggle: boolean;
+export interface showState {
+    showToggle: {
+        cart: boolean,
+        nav: boolean
+    }
 }
 
 export interface totalItemState {
@@ -23,6 +26,6 @@ export interface totalItemState {
 export const store  = configureStore({
     reducer: {
         cartDetail: cartDetailSlice,
-        cartToggle: cartShowHideSlice,
+        showToggle: toggleSlice,
     }
 })

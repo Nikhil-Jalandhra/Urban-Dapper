@@ -1,25 +1,25 @@
 import './Cart.css'
 import { SlClose } from "react-icons/sl";
 import { useDispatch, useSelector } from 'react-redux';
-import { cartToggleFunction } from '../Store/cartShowHideSlice';
+import { cartToggleFunction } from '../Store/toggleSlice';
 import { FaRupeeSign } from "react-icons/fa";
 import { decrementQuantity, deleteItem, incrementQuantity } from '../Store/cartDetailSlice';
 import cartNoItem from '../../Public/pageImages/cartNoItem.png'
 import React, { useEffect, useRef, useState } from 'react';
 import { dataObject } from '../Store/cartDetailSlice';
-import { cartState,totalItemState } from '../Store/store';
+import { showState, totalItemState } from '../Store/store';
 
 
 function Cart() {
 
-  const inVisibleCard =  useSelector((state: cartState) => state.cartToggle);
+  const inVisibleCard =  useSelector((state: showState) => state.showToggle.cart);
   const cartTotalItem =  useSelector((state: totalItemState ) => state.cartDetail);
   const [finalPrice, setFinalPrice] = useState(0);
   const dispatch = useDispatch() 
   const cartRef = useRef<HTMLDivElement>(null)
 
   const toggleFunction = () => {
-    dispatch(cartToggleFunction(false))
+    dispatch(cartToggleFunction(false)) 
   }
   
   const removeItemFunction = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -48,8 +48,8 @@ function Cart() {
       }
     }
 
-    cartCalculation()
     document.addEventListener("mousedown", handler)
+    cartCalculation()
   }, [cartTotalItem, dispatch])
 
   return (

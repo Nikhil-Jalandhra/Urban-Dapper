@@ -14,6 +14,7 @@ import Contact from "./Pages/Contact"
 import Login from "./Pages/Login"
 import SignUp from "./Pages/SignUp"
 import Cart from "./Components/Cart"
+import NavBarLink from "./Components/NavBarLink"
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
       {loaderFalse ? <Loader/> : 
     <Router>
       <NavBar/>
+      <NavBarLink/>
       <Cart/>
         <Routes>
           <Route element={<Home/>} path="/"/> 

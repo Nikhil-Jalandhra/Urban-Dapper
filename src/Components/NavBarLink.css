@@ -1,0 +1,61 @@
+.responsiveNavbar {
+    width: 30vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(187, 187, 187);
+    top: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+
+.responsiveNavbarHide {
+    right: -35%;
+    width: 0;
+    opacity: 0;
+}
+
+.responsiveNavClose {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+}
+
+.responsiveNavImage {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.responsiveNavImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.responsiveNavLink {
+    width: 100%;
+    min-height: 300px;
+    margin-top: 30px;
+}
+
+.responsiveNavLink a {
+    color: black;
+}
+
+.responsiveNavLink div {
+    padding: 15px 25px;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.responsiveNavLink p {
+    border-bottom: 1px solid black;
+}
