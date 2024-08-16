@@ -59,3 +59,15 @@
 .responsiveNavLink p {
     border-bottom: 1px solid black;
 }
+
+@media screen and (max-width: 1000px) {
+    .responsiveNavbar {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .responsiveNavbar {
+        width: 50vw;
+    }
+}

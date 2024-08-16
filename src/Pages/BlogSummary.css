@@ -34,7 +34,7 @@
     color: crimson;
 }
 
-.blogHeroDetailsContainer p:nth-child(3),p:nth-child(5),p:nth-child(8) {
+.blogHeroDetailsContainer p{
     margin: 20px 0;
     line-height: 4vh;
 }
