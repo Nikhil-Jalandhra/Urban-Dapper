@@ -96,7 +96,6 @@
 @media screen and (max-width: 1000px) {
     .logoContainer{
         width: 50vw;
-        background-color: cornflowerblue;
     }
     .navbar{
         justify-content: space-between;
@@ -118,6 +117,26 @@
     }
     .ccContainer {
         width: 50vw;
-        background-color: aqua;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logoContainer {
+        font-size: 20px;
+    }
+    .logo {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+    .ccIcon {
+        width: 40px;
+        height: 30px;
+        font-size: 18px;
+    }
+    .navBarIcon {
+        width: 40px;
+        height: 30px;
     }
 }

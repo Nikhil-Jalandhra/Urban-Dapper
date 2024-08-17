@@ -13,7 +13,7 @@
 }
 
 .responsiveNavbarHide {
-    right: -35%;
+    right: -60%;
     width: 0;
     opacity: 0;
 }
@@ -58,4 +58,33 @@
 
 .responsiveNavLink p {
     border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 1000px) {
+    .responsiveNavbar {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .responsiveNavbar {
+        width: 75vw;
+    }
+    .responsiveNavbarHide {
+        right: -100%;
+    }
+    .responsiveNavImage {
+        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-height: 430px) {
+    .responsiveNavImage {
+        display: none;
+    }
+    .responsiveNavLink {
+        margin-top: 0px;
+    }
 }

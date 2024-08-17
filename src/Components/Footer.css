@@ -1,19 +1,10 @@
 .footerContainer {
     width: 100%;
-    height: 50vh;
+    min-height: 35vh;
     background-color: gainsboro;
-    display: flex;
-}
-
-.fourDiv {
-    width: 25%;
-    height: 100%;
-    padding: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    font-size: 22px;
+    display: grid;
+    align-items: center;
+    grid-template-areas: "fourColumn fourColumn fourColumn fourColumn";
 }
 
 /* First box */
@@ -36,15 +27,25 @@
 .firstBoxFirstLine {
     display: flex;
     align-items: center;
-    padding: 1px;
     padding-top: 5px;
 }
 
 .firstBoxSecondLine {
-    padding-top: 5px;
+    margin-top: 5px;
 }
 
 .firstBoxSecondLine a{
+    text-decoration: none;
+    cursor: pointer;
+    color: firebrick;
+    font-size: 25px;
+}
+
+.firstBoxThirdLine {
+    margin: 8px;
+}
+
+.firstBoxThirdLine a{
     text-decoration: none;
     cursor: pointer;
     color: firebrick;
@@ -58,7 +59,6 @@
 /* Second box */
 
 .footerBoxSecond {
-    padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,23 +88,26 @@
 }
 
 .footerBoxThird p {
-    padding-top: 15px;
+    padding-top: 5px;
 }
 .footerInputContainer {
+    width: 220px;
+    height: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: white;
     color: #757575;
-    border-radius: 15px;
+    border-radius: 50px;
     padding: 5px 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .footerInput {
-    width: 200px;
+    width: 100%;
+    height: 100%;
     outline: none;
     border: none;
-    /* background-color: olivedrab; */
     
 }
 
@@ -118,11 +121,41 @@
 
 .footerIconContainer {
     display: flex;
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 30px;
 
 }
 
 .footerIconContainer p {
-    padding: 0 10px;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .footerContainer {
+        grid-template-areas: "fourColumn fourColumn";
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .footerContainer {
+        grid-template-areas: "fourColumn";
+    }
+    .fourDiv {
+        padding: 15px 30px;
+    }
+    .footerBoxFirst {
+        display: block;
+    }
+    .footerBoxSecond {
+        display: block;
+    }
+    .footerBoxThird {
+        display: block;
+    }
+    .footerBoxFourth {
+        display: block;
+    }
+
 }

@@ -1,11 +1,11 @@
 .ourStoryContainer {
     width: 100%;
-    height: 60vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
     padding: 20px 0;
+    font-size: 25px;
 }
 
 .ourStoryHeading {
@@ -17,12 +17,31 @@
     height: 100%;
     width: 70vw;
     margin-top: 15px;
-    /* background-color: burlywood; */
 }
 
 .ourStoryPara {
     margin-top: 20px;
-    font-size: 25px;
     line-height: 35px;
     color: rgb(30, 30, 30);
+}
+
+@media screen and (max-width: 1000px) {
+    .ourStoryParaContainer {
+        height: 100%;
+        width: 80vw;  
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ourStoryHeading {
+        letter-spacing: 2px;
+        font-size: 50px;
+    }
+    .ourStoryParaContainer {  
+        font-size: 16px;
+    }
+    .ourStoryPara {
+        margin-top: 10px;
+        line-height: 20px;
+    }
 }
