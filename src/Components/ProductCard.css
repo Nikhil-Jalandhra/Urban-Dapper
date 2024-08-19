@@ -7,7 +7,7 @@
     letter-spacing: 1px;
     overflow: hidden;
     border-radius: 5px;
-    margin: 25px 25px;
+    margin: 1vw;
 }
 
 .productImageContainer {
@@ -37,8 +37,8 @@
 }
 
 .productCardButton {
-    width: 250px;
-    height: 40px;
+    width: 90%;
+    height: 10%;
     color: black;
     background-color: white;
     display: flex;
@@ -88,4 +88,23 @@
 .productPrice {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .productCardContainer {
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .productCardContainer {
+        margin: 15px;
+    }
+}
+
+@media screen and (max-height: 430px) {
+    .productCardContainer {
+        width: 250px;
+        height: 320px;
+    }
 }

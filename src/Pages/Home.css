@@ -55,7 +55,7 @@
     overflow: hidden;
 }
 
-.featuredCardContainer {
+.prouductFeaturedCardContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,26 +63,43 @@
     padding: 10px 0;
 }
 
-.featuredCardContainer h1 {
+.prouductFeaturedCardContainer h1 {
     font-size: 70px;
 }
 
-.featuredCardContainer a {
+.prouductFeaturedCardContainer a {
     color: black;
 }
 
-.cardsContainer{
+.prouductCardsContainer{
     width: 100%;
     display: grid;
-    grid-template-areas: "cards cards cards cards cards";
-    overflow-y: scroll;
+    justify-content: center;
+    grid-template-areas: "cards cards cards cards";
 }
 
-.cardsContainer::-webkit-scrollbar {
-    display: none;
+.blogFeaturedCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
 }
 
+.blogFeaturedCardContainer h1 {
+    font-size: 70px;
+}
 
+.blogFeaturedCardContainer a {
+    color: black;
+}
+
+.blogCardsContainer{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "cards cards cards";
+}
 
 @media screen and (max-width: 1000px) {
     .homeImageContainer {
@@ -93,10 +110,16 @@
         font-size: 11vw;
     }
     .homeTextContainerHeading {
-        margin-top: 10vh;
+        margin-top: 5vw;
     }
     .featuredCardContainer h1 {
         font-size: 50px;
+    }
+    .prouductCardsContainer{
+        grid-template-areas: "cards cards";
+    }
+    .blogCardsContainer{
+        grid-template-areas: "cards cards";
     }
 }
 
@@ -111,10 +134,16 @@
         padding-left: 20px;
     }
     .homeTextContainerHeading {
-        margin-top: 10vh;
+        margin-top: 10vw;
     }
     .featuredCardContainer h1 {
         font-size: 50px;
+    }
+    .prouductCardsContainer{
+        grid-template-areas: "cards";
+    }
+    .blogCardsContainer{
+        grid-template-areas: "cards";
     }
 }
 
@@ -128,5 +157,8 @@
     }
     .homeTextContainerHeading {
         margin-top: 20vh;
+    }
+    .blogCardsContainer{
+        grid-template-areas: "cards";
     }
 }
