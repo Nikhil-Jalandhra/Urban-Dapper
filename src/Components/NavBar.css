@@ -94,11 +94,12 @@
 }
 
 @media screen and (max-width: 1000px) {
+    .navbar{
+        height: 8vh;
+        justify-content: space-between;
+    }
     .logoContainer{
         width: 50vw;
-    }
-    .navbar{
-        justify-content: space-between;
     }
     .navLink {
         display: none;
@@ -123,12 +124,35 @@
 
 @media screen and (max-width: 500px) {
     .logoContainer {
-        font-size: 20px;
+        font-size: 7vw;
     }
     .logo {
         width: 25px;
         height: 25px;
         margin-right: 5px;
+    }
+    .ccIcon {
+        width: 40px;
+        height: 30px;
+        font-size: 18px;
+    }
+    .navBarIcon {
+        width: 40px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-height: 430px) {
+    .navbar{
+        height: 15vh;
+    }
+    .logo {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+    .logoContainer {
+        font-size: 8vh;
     }
     .ccIcon {
         width: 40px;

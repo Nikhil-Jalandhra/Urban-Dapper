@@ -41,19 +41,20 @@ function Home() {
 
         <OurStory/>
 
-        <div className="featuredCardContainer">
+        <div className="prouductFeaturedCardContainer">
             <Link to={"/shop/All"}><h1>Products</h1></Link>
-            <div className="cardsContainer">
-                {uniqueItem.map((item) => (<ProductCard item={item} key={item?.id}/>))}
+            <div className="prouductCardsContainer">
+                {uniqueItem.map((item, index) => 
+                    ( index <= 3 && <ProductCard item={item} key={index}/>))}
             </div>
         </div>
 
 
-        <div className="featuredCardContainer">
+        <div className="blogFeaturedCardContainer">
             <Link to={"/Blog"}><h1>Latest Blogs</h1></Link>
-            <div className="cardsContainer">
+            <div className="blogCardsContainer">
                 {blogData.map((item)=> (
-                    item.id <= 5 &&  <BlogCard key={item.id} item={item}/> 
+                    item.id <= 3 &&  <BlogCard key={item.id} item={item}/> 
                 ))}
             </div>
         </div>
