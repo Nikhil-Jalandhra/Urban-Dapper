@@ -1,9 +1,8 @@
 import './Shop.css'
-import { MouseEvent } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ProductCard from '../Components/ProductCard';
 import productData from '../Database/ProductDatabase';
-import { useEffect, useState } from 'react';
 import Loader from '../Components/Loader';
 
 function Shop() {
@@ -80,7 +79,7 @@ function Shop() {
         <div className='productsFilter'>
          {filterLink.map((item)=> (
           <Link to={item.link} key={item.text} ><button onClick={setFilterValue} className={`${currentloaction === item.link ? "filterLinkActiveCss": ""}`} value={item.value}>{item.text}</button></Link>
-         ))} 
+         ))}
         </div> 
         {loader ? <Loader/> :
           <div className="shopContainer">
