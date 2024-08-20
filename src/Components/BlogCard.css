@@ -5,7 +5,7 @@
     letter-spacing: 1px;
     border-radius: 5px;
     overflow: hidden;
-    margin: 25px 25px;
+    margin: 25px;
     color: black;
 }
 
@@ -45,4 +45,38 @@ a {
 
 .blogDetailsContainer p:nth-child(3) {
     padding: 10px 0;
+}
+
+@media screen and (max-width: 500px) {
+    .blogCardContainer {
+        width: 95vw;
+        height: 450px;
+        background-color: gainsboro;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5vw 0;
+        color: black;
+    }
+}
+
+@media screen and (max-height: 430px) {
+    .blogCardContainer {
+        width: 45vw;
+        height: 400px;
+        background-color: gainsboro;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 5vh;
+        color: black;
+    }
+}
+
+@media screen and (max-height: 320px) {
+    .blogCardContainer {
+        width: 70vw;
+        height: 400px;
+        margin: 5vh;
+    }
 }
