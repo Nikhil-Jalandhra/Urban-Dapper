@@ -98,7 +98,7 @@
 
 @media screen and (max-width: 500px) {
     .productCardContainer {
-        margin: 15px;
+        width: 95vw;
     }
 }
 
