@@ -28,7 +28,7 @@ function SignUp() {
                     </div>
                         <p>Confirm Password</p>
                     <div className="signUpInputTwins">
-                        <input type="text" placeholder="Retype Password" />
+                        <input type="text" placeholder="Confirm Password" />
                     </div>
                 <button>SignUp</button>
                 <p>Already Signup? Please <Link to="/login" >login..</Link></p>
