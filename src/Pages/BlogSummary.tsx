@@ -22,7 +22,7 @@ function BlogSummary() {
                 <h2>{blogDetails?.title1}</h2>
                 <p className="blogParagraph">{blogDetails?.description1}</p>
                 <h2>{blogDetails?.title2}</h2>
-                <p>{blogDetails?.description2}</p>
+                <p className="blogParagraph">{blogDetails?.description2}</p>
                 <div className="blogCoStar">
                     <div className="blogCoStar1">
                         <img className="blogCoStarImages" src={blogDetails?.image1} alt={blogDetails?.title2} />
@@ -32,7 +32,7 @@ function BlogSummary() {
                     </div>
                 </div>
                 <h2>{blogDetails?.title3}</h2>
-                <p>{blogDetails?.description3}</p>
+                <p className="blogParagraph">{blogDetails?.description3}</p>
                 <div className="blogFooterContainer">
                     <div className="blogLastLine"></div>
                     <div className="blogLastLineDetails">
