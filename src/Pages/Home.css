@@ -65,6 +65,7 @@
 
 .prouductFeaturedCardContainer h1 {
     font-size: 70px;
+    letter-spacing: 5px;
 }
 
 .prouductFeaturedCardContainer a {
@@ -88,6 +89,7 @@
 
 .blogFeaturedCardContainer h1 {
     font-size: 70px;
+    letter-spacing: 5px;
 }
 
 .blogFeaturedCardContainer a {
@@ -112,8 +114,13 @@
     .homeTextContainerHeading {
         margin-top: 5vw;
     }
-    .featuredCardContainer h1 {
+    .prouductFeaturedCardContainer h1 {
         font-size: 50px;
+        letter-spacing: 3px;
+    }
+    .blogFeaturedCardContainer h1 {
+        font-size: 50px;
+        letter-spacing: 3px;
     }
     .prouductCardsContainer{
         grid-template-areas: "cards cards";
@@ -137,7 +144,9 @@
         margin-top: 10vw;
     }
     .featuredCardContainer h1 {
-        font-size: 50px;
+        /* font-size: 50px; */
+        /* letter-spacing: 3px; */
+        background-color: crimson;
     }
     .prouductCardsContainer{
         grid-template-areas: "cards";
