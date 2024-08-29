@@ -21,12 +21,12 @@ function Footer() {
             <h2 className="footerLogoText">URBAN-DAPPER</h2>
 
             <p className="firstBoxFirstLine">
-              <FaRegCopyright className="copyRightIcon"/>&nbsp;2024 desigen and
+              <FaRegCopyright className="copyRig htIcon"/>&nbsp;2024 desigen and
             </p>
 
             <p className="firstBoxSecondLine">developed by <a href="https://github.com/Nikhil-Jalandhra">JNEEK</a></p>
 
-            <p className="firstBoxSecondLine">Powered by <a href="https://www.linkedin.com/in/nikhil-jalandhra-1479742b0/">Nikhil Jalandhra</a></p>
+            <p className="firstBoxThirdLine">Powered by <a href="https://www.linkedin.com/in/nikhil-jalandhra-1479742b0/">Nikhil Jalandhra</a></p>
 
             </div>
 
@@ -49,11 +49,11 @@ function Footer() {
             <div className="footerBoxThird">
               <p>Get 100% OFF</p>
               <p>By advance payment</p>
-            </div>
 
-            <div className="footerInputContainer">
-              <input type="text" className="footerInput" placeholder="This is just display" />
-              <p><TbSend2/></p>
+              <div className="footerInputContainer">
+                <input type="text" className="footerInput" placeholder="This is just display" />
+                <p><TbSend2/></p>
+              </div>
             </div>
 
           </div>
@@ -61,7 +61,7 @@ function Footer() {
           <div className="fourDiv">
 
             <div className="footerBoxFourth">
-              <p>Follow us on</p>
+              <p>Follow us on :</p>
 
               <div className="footerIconContainer">
                 <p><IoLogoLinkedin/></p>

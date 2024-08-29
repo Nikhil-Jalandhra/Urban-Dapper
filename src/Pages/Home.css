@@ -7,7 +7,7 @@
 
 .homeImage {
     width: 100%;
-    height: 88vh;
+    height: 100%;
     object-fit: cover;
     opacity: 0.7;
 }
@@ -18,87 +18,156 @@
     color: white;
     position: absolute;
     top: 12vh;
+    padding-left: 50px;
+    letter-spacing: 5px;
+    font-size: 8vw;
+    text-transform: uppercase;
+    text-wrap: nowrap;
 }
-
-/* First text animation */
 
 @keyframes textAnimation {
-    from {
-        transform: translateY(150px);
-    }
-    to {
-        transform: translateY(0px);
-    }
-}
-
-.homeTextContainerHeading {
-    width: 600px;
-    margin-top: 130px;
-    margin-left: 120px;
-    text-transform: uppercase;
-    /* background-color: crimson; */
-    overflow: hidden;
-}
-
-.homeHeadingText {
-    letter-spacing: 5px;
-    font-size: 180px;
-    animation-name: textAnimation;
-    animation-duration: 2s;
-}
-
-/* Second text animation */
-
-@keyframes textAnimation2 {
     from {
         width: 0;
     }
     to {
-        width: 1500px;
+        width: 100%;
     }
 }
 
-.homeTextContainerHeading2 {
-    width: 1200px;
-    text-wrap: nowrap;
-    margin-top: 10px;
-    margin-left: 120px;
-    text-transform: uppercase;
-    /* background-color: crimson; */
+.homeTextContainerHeading {
+    margin-top: 20vh;
+}
+
+.homeHeadingText {
+    animation-name: textAnimation;
+    animation-duration: 7s;
     overflow: hidden;
 }
 
+.homeTextContainerHeading2 {
+    margin-top: 10px;
+    
+}
+
 .homeHeadingText2 {
-    letter-spacing: 5px;
-    font-size: 180px;
-    animation-name: textAnimation2;
+    animation-name: textAnimation;
     animation-duration: 4s;
     overflow: hidden;
 }
 
-.featuredCardContainer {
+.prouductFeaturedCardContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 30px 0;
+    padding: 10px 0;
 }
 
-.featuredCardContainer h1 {
+.prouductFeaturedCardContainer h1 {
     font-size: 70px;
+    letter-spacing: 5px;
 }
 
-.featuredCardContainer a {
+.prouductFeaturedCardContainer a {
     color: black;
 }
 
-.cardsContainer{
+.prouductCardsContainer{
     width: 100%;
     display: grid;
-    grid-template-areas: "cards cards cards cards cards";
-    overflow-y: scroll;
+    justify-content: center;
+    grid-template-areas: "cards cards cards cards";
 }
 
-.cardsContainer::-webkit-scrollbar {
-    display: none;
+.blogFeaturedCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.blogFeaturedCardContainer h1 {
+    font-size: 70px;
+    letter-spacing: 5px;
+}
+
+.blogFeaturedCardContainer a {
+    color: black;
+}
+
+.blogCardsContainer{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "cards cards cards";
+}
+
+@media screen and (max-width: 1000px) {
+    .homeImageContainer {
+        width: 100%;
+        height: 45vh;
+    }
+    .homeTextContainer{
+        font-size: 11vw;
+    }
+    .homeTextContainerHeading {
+        margin-top: 5vw;
+    }
+    .prouductFeaturedCardContainer h1 {
+        font-size: 50px;
+        letter-spacing: 3px;
+    }
+    .blogFeaturedCardContainer h1 {
+        font-size: 50px;
+        letter-spacing: 3px;
+    }
+    .prouductCardsContainer{
+        grid-template-areas: "cards cards";
+    }
+    .blogCardsContainer{
+        grid-template-areas: "cards cards";
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .homeImageContainer {
+        width: 100%;
+        height: 40vh;
+    }
+    .homeTextContainer{
+        font-size: 11vw;
+        letter-spacing: 2px;
+        padding-left: 20px;
+    }
+    .homeTextContainerHeading {
+        margin-top: 10vw;
+    }
+    .featuredCardContainer h1 {
+        /* font-size: 50px; */
+        /* letter-spacing: 3px; */
+        background-color: crimson;
+    }
+    .prouductCardsContainer{
+        grid-template-areas: "cards";
+    }
+    .blogCardsContainer{
+        grid-template-areas: "cards";
+    }
+}
+
+@media screen and (max-height: 430px) {
+    .homeImageContainer {
+        width: 100%;
+        height: 88vh;
+    }
+    .homeTextContainer{
+        font-size: 8vw;
+    }
+    .homeTextContainerHeading {
+        margin-top: 20vh;
+    }
+    .blogCardsContainer{
+        grid-template-areas: "cards";
+    }
 }

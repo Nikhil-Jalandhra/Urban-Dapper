@@ -1,7 +1,7 @@
 .blogContainer {
     width: 100%;
     min-height: 100vh;
-    padding: 50px 0;
+    padding: 3vh 0;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -20,6 +20,13 @@
     }
 }
 @media screen and (max-width: 500px) {
+    .blogContainer {
+        grid-template-areas: "cards";
+        padding: 3vw 0;
+    }
+}
+
+@media screen and (max-height: 320px) {
     .blogContainer {
         grid-template-areas: "cards";
     }

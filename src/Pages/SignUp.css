@@ -14,15 +14,15 @@
 }
 
 .signUpImageContainer {
-    width: 70%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     overflow: hidden;
 }
 
 .signUpImageContainer img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .signUpInputContianer {
@@ -67,4 +67,59 @@
 .signUpInputContianer p a {
     text-decoration: underline;
     color: crimson;
+}
+
+@media screen and (max-width: 500px) {
+    .signUpContainer {
+        width: 100%;
+        display: inline;
+        font-size: 5vw;
+    }
+    .signUpTwinsContainer {
+        width: 100%;
+    }
+    .signUpImageContainer {
+        margin: 10vw 0;
+        width: 40vw;
+        overflow: hidden;
+    }
+    .signUpInputContianer {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .signUpInputTwins input {
+        font-size: 4vw;
+        padding: 5px 10px;
+    }
+}
+
+
+@media screen and (max-height: 430px) {
+    .signUpContainer {
+        font-size: 6vh;
+        min-height: 400px;
+    }
+    .signUpInputTwins {
+        width: 100%;
+        height: 30px;
+    }
+    .signUpInputTwins input {
+        padding: 0px 10px;
+        font-size: 4vh;
+    }
+    .signUpInputContianer button {
+        width: 100%;
+        height: 30px;
+        font-size: 4vh;
+        margin-top: 10px;
+    }
+    .signUpInputContianer p {
+        margin: 10px 0;
+    }
+    .signUpInputContianer {
+        margin: 10px 0;
+    }
 }

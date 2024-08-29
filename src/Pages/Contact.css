@@ -1,44 +1,32 @@
 .contactFormContainer {
     width: 100%;
-    height: 88vh;
     display: flex;
+    padding: 8vw 0;
 }
 
 .contactDetailBox {
-    width: 45%;
+    width: 50%;
     display: flex;
-    margin-top: 150px;
     flex-direction: column;
     align-items: center;
 }
 
-.contactDetail {
-    padding-left: 50px;
-    width: 60%;
-}
-
-.contactDetail h2 {
+.contactDetail h2{
     margin-bottom: 20px;
-    font-size: 50px;
+    font-size: 60px;
     letter-spacing: 2px;
 }
 
-.contactDetail p:nth-child(2) {
+.contactDetail p {
     margin: 10px 0;
-}
-
-.contactDetail p:nth-child(3) {
-    margin: 15px 0;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .contactIcon {
-    width: 60%;
     display: flex; 
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 10px 0;   
-    font-size: 30px;
 }
 
 .contactIcon p {
@@ -51,15 +39,15 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    font-size: 30px;
 }
 
 .inputContainerBox{
-    width: 55%;
+    width: 50%;
 }
 
 .inputContainer {
-    width: 70%;
-    margin-top: 150px;
+    width: 80%;
 }
 
 .inputContainer h2 {
@@ -106,4 +94,97 @@
     border: 1px solid gray;
     background-color: black;
     color: white;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .contactFormContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 4vw 0;
+    }
+    .contactDetailBox {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0 0 0;
+    }
+
+
+
+    .inputContainer {
+        width: 70%;
+    }
+
+    .inputContainerBox{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+    .contactTwoInput {
+        display: flex;
+        flex-direction: column;
+    }
+    .inputTwins {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .contactDetail h2{
+        margin-bottom: 10px;
+        font-size: 40px;
+    }
+    .contactDetail p {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    .contactFormContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 4vw 0;
+    }
+    .contactDetailBox {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 50px 0 0 0;
+    }
+    .contactIcon p {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .inputContainer h2 {
+        margin-bottom: 20px;
+        font-size: 40px;
+    }
+    .inputContainer {
+        width: 90%;
+    }
+    .inputContainerBox{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .contactTwoInput {
+        display: flex;
+        flex-direction: column;
+    }
+    .inputTwins {
+        height: 40px;
+        margin-bottom: 10px;
+    }
+    .inputContainer button {
+        width: 100%;
+        height: 50px;
+    }
 }

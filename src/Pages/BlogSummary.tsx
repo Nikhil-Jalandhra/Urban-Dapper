@@ -18,11 +18,11 @@ function BlogSummary() {
                 <img className="blogHeroImage" src={blogDetails?.image1} alt={blogDetails?.title1} />
             </div>
             <div className="blogHeroDetailsContainer">
-                <p>By <span>{blogDetails?.author}</span> {blogDetails?.date}</p>
+                <p className="blogAuthour" >By <span>{blogDetails?.author}</span> {blogDetails?.date}</p>
                 <h2>{blogDetails?.title1}</h2>
-                <p>{blogDetails?.description1}</p>
+                <p className="blogParagraph">{blogDetails?.description1}</p>
                 <h2>{blogDetails?.title2}</h2>
-                <p>{blogDetails?.description2}</p>
+                <p className="blogParagraph">{blogDetails?.description2}</p>
                 <div className="blogCoStar">
                     <div className="blogCoStar1">
                         <img className="blogCoStarImages" src={blogDetails?.image1} alt={blogDetails?.title2} />
@@ -32,13 +32,13 @@ function BlogSummary() {
                     </div>
                 </div>
                 <h2>{blogDetails?.title3}</h2>
-                <p>{blogDetails?.description3}</p>
+                <p className="blogParagraph">{blogDetails?.description3}</p>
                 <div className="blogFooterContainer">
                     <div className="blogLastLine"></div>
                     <div className="blogLastLineDetails">
                         <p>At last:&nbsp;<span>MEN</span>&nbsp;WILL&nbsp; <span>be</span>&nbsp;Men&nbsp;<span><GiSpy/></span></p>
                         <div className="blogSocialIcon">
-                            <p>Follow me:</p>
+                            <h4>Follow me:</h4>
                             <p><FaGithub /></p>
                             <p><FaLinkedin /></p>
                             <p><RiTwitterXFill /></p>
