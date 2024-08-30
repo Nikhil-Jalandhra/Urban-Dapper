@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import './BlogCard.css';
+import { Link } from 'react-router-dom';
 
 interface blogCardData {
   item: { 
