@@ -1,59 +1,43 @@
-import "./NavBar.css"
-import { Link, useLocation } from "react-router-dom";
-import logo from "../../Public/Logo/OnlyLogo.png"
-import { BsPersonCircle } from "react-icons/bs";
-import { HiMiniShoppingCart } from "react-icons/hi2";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useEffect, useState } from "react";
-import { cartToggleFunction, navToggleFunction } from "../Store/toggleSlice";
-import { useDispatch, useSelector } from "react-redux";
+import "./NavBar.css";
 import { showState } from "../Store/store";
+import { useEffect, useState } from "react";
+import { BsPersonCircle } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
+import logo from "../../Public/Logo/OnlyLogo.png";
+import { Link, useLocation } from "react-router-dom";
+import { HiMiniShoppingCart } from "react-icons/hi2";
+import { useDispatch, useSelector } from "react-redux";
+import { cartToggleFunction, navToggleFunction } from "../Store/toggleSlice";
 
 function NavBar() {
 
- const dispatch =  useDispatch()
+ const dispatch =  useDispatch();
 
   const cartToggleState = useSelector((state: showState) => state.showToggle.cart);
   const navToggleState = useSelector((state: showState) => state.showToggle.nav);
 
   const navLink = [
-    {
-      name: "Home",
-      link: "/",
-    },
-    {
-      name: "About",
-      link: "/about",
-    },
-    {
-      name: "Shop",
-      link: "/shop/All",
-    },
-    {
-      name: "Blog",
-      link: "/blog",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-    },
-  ]
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'Shop', link: '/shop/All' },
+    { name: 'Blog', link: '/blog' },
+    { name: 'Contact', link: '/contact' }
+  ];
   
   const carttoggleFunctionality = () => {
-    dispatch(cartToggleFunction(!cartToggleState))
-  }
+    dispatch(cartToggleFunction(!cartToggleState));
+  };
 
   const navtoggleFunctionality = () => {
-    dispatch(navToggleFunction(!navToggleState))
-    
-  }
+    dispatch(navToggleFunction(!navToggleState));
+  };
 
-  const location = useLocation()
+  const location = useLocation();
 
   const [activeLink, setActiveLink] = useState("/");
 
   useEffect(() => {
-    setActiveLink(location.pathname)
+    setActiveLink(location.pathname);
   }, [activeLink,location]);
   
   return (
@@ -86,12 +70,19 @@ function NavBar() {
         {/* contact & cart here */}
 
         <div className="ccContainer">
-          <Link to="/login"><div className={`ccIcon ${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}><BsPersonCircle /></div></Link>
+          <Link to="/login">
+            <div className={`ccIcon ${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}>
+              <BsPersonCircle />
+            </div>
+          </Link>
 
-          <div className="ccIcon" onClick={carttoggleFunctionality}><HiMiniShoppingCart /></div>
+          <div className="ccIcon" onClick={carttoggleFunctionality}>
+            <HiMiniShoppingCart />
+          </div>
 
-          <div className="navBarIcon" onClick={navtoggleFunctionality}><GiHamburgerMenu /></div>
-
+          <div className="navBarIcon" onClick={navtoggleFunctionality}>
+            <GiHamburgerMenu />
+          </div>
         </div>
 
       </div>
