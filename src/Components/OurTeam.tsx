@@ -1,6 +1,6 @@
-import "./OurTeam.css"
-import heroImg from "../../Public/pageImages/heroImg2.jpg"
-import { RiVerifiedBadgeFill } from "react-icons/ri";
+import "./OurTeam.css";
+import { RiVerifiedBadgeFill } from "react-icons/ri"; 
+import heroImg from "../../Public/pageImages/heroImg2.jpg";
 
 function OurTeam() {
   return (
@@ -15,7 +15,10 @@ function OurTeam() {
           <img src={heroImg} className="ourTeamHeroImg" alt="heroImg" />
         </div>
         <p className="ourTeamName">Nikhil Jalandhra</p>
-        <p className="ourTeamPost"><span><RiVerifiedBadgeFill /></span>Developer</p>
+        <p className="ourTeamPost">
+          <span><RiVerifiedBadgeFill /></span>
+          Developer
+        </p>
 
       </div>
     </div>
