@@ -1,14 +1,13 @@
-import './Contact.css'
+import './Contact.css';
+import { ImCool } from "react-icons/im";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
-import { ImCool } from "react-icons/im";
 
 function Contact() {
   return (
     <div>
       <div className="contactFormContainer">
-
         <div className='contactDetailBox'>
           <div className='contactDetail'>
             <h2>Contact Us</h2>
@@ -28,14 +27,17 @@ function Contact() {
           <div className='inputContainer'>
               <h2>Drop Us a Message</h2>
               <div className='contactTwoInput'>
-                  <div className='inputTwins'><input type="text" placeholder='Your Name' /></div>
-                  <div className='inputTwins'><input type="text" placeholder='Your Email' /></div>
+                  <div className='inputTwins'>
+                    <input type="text" placeholder='Your Name' />
+                  </div>
+                  <div className='inputTwins'>
+                    <input type="text" placeholder='Your Email' />
+                  </div>
               </div>
               <textarea name="" id="" placeholder='Type here'></textarea>
-              <button>Submit </button>
+              <button>Submit</button>
           </div>
         </div>
-
       </div>
     </div>
   );
