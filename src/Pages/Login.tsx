@@ -1,6 +1,6 @@
-import "./Login.css"
+import "./Login.css";
 import { Link } from "react-router-dom";
-import loginImage from "../../Public/pageImages/loginImage.png"
+import loginImage from "../../Public/pageImages/loginImage.png";
 
 function Login() {
   return (
