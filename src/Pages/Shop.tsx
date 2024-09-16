@@ -82,16 +82,16 @@ function Shop() {
     <div>
       <div className='productCardsContainer'>
         <div className='productsFilter'>
-         {filterLink.map((item)=> (
-          <Link to={item.link} key={item.text} ><button onClick={setFilterValue} className={`${currentloaction === item.link ? "filterLinkActiveCss": ""}`} value={item.value}>{item.text}</button></Link>
-         ))}
+          {filterLink.map((item)=> (
+            <Link to={item.link} key={item.text} ><button onClick={setFilterValue} className={`${currentloaction === item.link ? "filterLinkActiveCss": ""}`} value={item.value}>{item.text}</button></Link>
+          ))}
         </div> 
         {loader ? <Loader/> :
-          <div className="shopContainer">
+        <div className="shopContainer">
           {finalProductsData.map((item,index)=> (
               <ProductCard key={index} item={item}/>
           ))}
-          </div>
+        </div>
         }
       </div>
     </div>
