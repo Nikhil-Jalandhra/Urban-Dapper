@@ -1,6 +1,6 @@
+import "./SignUp.css";
 import { Link } from "react-router-dom";
-import "./SignUp.css"
-import singUpImage from "../../Public/pageImages/signupImage.png"
+import singUpImage from "../../Public/pageImages/signupImage.png";
 
 function SignUp() {
   return (
@@ -14,7 +14,8 @@ function SignUp() {
             </div>
             <div className="signUpTwinsContainer">
                 <div className="signUpInputContianer">
-                        <p>Name</p>
+                    <p>Name</p>
+                    
                     <div className="signUpInputTwins">
                         <input type="text" placeholder="Enter Name" />
                     </div>
@@ -30,8 +31,9 @@ function SignUp() {
                     <div className="signUpInputTwins">
                         <input type="text" placeholder="Confirm Password" />
                     </div>
-                <button>SignUp</button>
-                <p>Already Signup? Please <Link to="/login" >login..</Link></p>
+
+                    <button>SignUp</button>
+                    <p>Already Signup? Please <Link to="/login" >login..</Link></p>
                 </div>
             </div>
         </div>
