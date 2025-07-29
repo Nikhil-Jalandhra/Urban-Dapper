@@ -26,7 +26,7 @@ function ProductCard({item}: productCardData) {
 
         <Link to={`/shop/product/${item?.category||"category"}/${item?.id || 5}`}><div className='productCardButton'>View Product</div></Link>
         <div className='productDetail'>    
-            <h2 className='productDetailMargin'>{item?.title.slice(0,20)||"title"}...</h2>
+            <h2 className='productDetailMargin clamp-1'>{item?.title ||"title"}</h2>
             <div className='productPriceContainer productDetailMargin'>
                 <h4 className='productPrice'><MdOutlineCurrencyRupee />{item?.newPrice|| "000"}&nbsp;INR</h4>
                 <h4 className='productPrice'><MdOutlineCurrencyRupee />{item?.oldPrice || "000"}&nbsp;INR</h4>

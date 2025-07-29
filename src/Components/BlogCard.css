@@ -34,17 +34,44 @@ a {
     padding: 0 15px;
 }
 
-
-.blogDetailsContainer p:nth-child(1) {
-    padding: 15px 0;
+.blogMeta {
+  padding: 15px 0 5px;
+  font-size: 0.85rem;
+  color: #666;
 }
 
-.blogDetailsContainer p:nth-child(1) span {
-    color: crimson;
+.blogMeta span {
+  color: crimson;
 }
 
-.blogDetailsContainer p:nth-child(3) {
-    padding: 10px 0;
+.clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+
+.clamp-7 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
+}
+
+.blogTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+}
+
+.blogDescription {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 500px) {

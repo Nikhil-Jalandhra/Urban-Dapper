@@ -23,6 +23,14 @@
     transition: 0.3s ease-in-out;
 }
 
+.clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+
 .productCardContainer:hover .productImage {
     transform: scale(1.1);
 }
