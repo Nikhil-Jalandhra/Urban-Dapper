@@ -1,97 +1,85 @@
-import './Shop.css'
-import { MouseEvent, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import './Shop.css';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCurrentPage } from '../Store/paginationSlice';
 import ProductCard from '../Components/ProductCard';
 import productData from '../Database/ProductDatabase';
-import Loader from '../Components/Loader';
+import Pagination from '../Components/Pagination';
+import { Product, RootState } from '../types';
 
 function Shop() {
+  const filterLinks = [
+    { link: "All", text: "All" },
+    { link: "Belts", text: "Belts" },
+    { link: "Jackets", text: "Jackets" },
+    { link: "Shoes", text: "Shoes" },
+    { link: "T-Shirts", text: "T-Shirts" },
+    { link: "Wallets", text: "Wallets" },
+  ];
 
-  const filterLink = [
-    {
-      link: "/shop/All",
-      value: "All",
-      text: "All"
-    },
-    {
-      link: "/shop/Belts",
-      value: "Belts",
-      text: "Belts"
-    },
-    {
-      link: "/shop/Jackets",
-      value: "Jacktes",
-      text: "Jacktes"
-    },
-    {
-      link: "/shop/Shoes",
-      value: "Shoes",
-      text: "Shoes"
-    },
-    {
-      link: "/shop/T-Shirts",
-      value: "T-Shirts",
-      text: "T-Shirts"
-    },
-    {
-      link: "/shop/Wallets",
-      value: "Wallets",
-      text: "Wallets"
-    },
-  ]
+  const { category = "All", page = "1" } = useParams();
+  const dispatch = useDispatch();
+  const currentPage = useSelector((state: RootState) => state.pagination.currentPage);
+  const [filterCategory, setFilterCategory] = useState(category);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
-  const [filterCategory, setFilterCategory] = useState("All");
-  const [finalProductsData, setFinalProductsData] = useState(productData);
-  const [currentloaction, setCurrentloaction] = useState("shop/All");
-  const [loader, setLoader] = useState(true);
-  const currentLinklocation = useLocation()
+  const itemsPerPage = 12;
 
   useEffect(() => {
+    setFilterCategory(category);
+    dispatch(updateCurrentPage(Number(page) || 1));
 
-    const filterFunction = () => {
-      if(filterCategory === "All"){
-         setFinalProductsData(productData)
-        }else {
-          const data = productData.filter((item)=> (item.category === filterCategory))
-          setFinalProductsData(data)
-        }
-        setLoader(true)
+    const filterData = () => {
+      if (category === "All") {
+        setFilteredProducts(productData);
+      } else {
+        const filtered = productData.filter((item) => item.category === category);
+        setFilteredProducts(filtered);
       }
+    };
 
-    setFilterCategory(currentLinklocation.pathname.slice(6))
-    setCurrentloaction(currentLinklocation.pathname)
-    
-    filterFunction()
+    filterData();
+  }, [category, page, dispatch]);
 
-    const timer = Math.floor(Math.random() * (2000 - 1000 + 1) + 1000 )
-    setTimeout(() => {
-      setLoader(false)
-    }, timer)
-  }, [filterCategory, currentLinklocation.pathname]);
-  
-  const  setFilterValue = (e: MouseEvent<HTMLButtonElement>) => {
-    setFilterCategory(e.currentTarget?.value)
-  }
-    
+  const paginatedData = filteredProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   return (
-    <div>
-      <div className='productCardsContainer'>
-        <div className='productsFilter'>
-         {filterLink.map((item)=> (
-          <Link to={item.link} key={item.text} ><button onClick={setFilterValue} className={`${currentloaction === item.link ? "filterLinkActiveCss": ""}`} value={item.value}>{item.text}</button></Link>
-         ))}
-        </div> 
-        {loader ? <Loader/> :
-          <div className="shopContainer">
-          {finalProductsData.map((item,index)=> (
-              <ProductCard key={index} item={item}/>
-          ))}
-          </div>
-        }
+    <div className="productCardsContainer">
+      {/* Filter Links */}
+      <div className="productsFilter">
+        {filterLinks.map((item) => (
+          <Link key={item.text} to={`/shop/${item.link}/1`}>
+            <button
+            style={{backgroundColor: `${filterCategory === item.link ? "#bfa375" : ""}`}}
+              className={category === item.link ? "filterLinkActiveCss" : ""}
+              value={item.link}
+            >
+              {item.text}
+            </button>
+          </Link>
+        ))}
       </div>
+
+      {/* Pagination */}
+      <Pagination
+        child={Math.ceil(filteredProducts.length / itemsPerPage)}
+        category={category}
+        type="shop"
+      />
+
+
+      {/* Products */}
+        <div className="shopContainer">
+          {paginatedData.map((item, index) => (
+            <ProductCard key={index} item={item} />
+          ))}
+        </div>
     </div>
   );
 }
-
 
 export default Shop;

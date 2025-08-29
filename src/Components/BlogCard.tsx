@@ -30,7 +30,7 @@ function BlogCard({item}: blogCardData) {
           <div className='blogDetailsContainer'>
             <p className='blogMeta'>By <span>{item.author}</span> \ {item.date}</p>
             <h2 className="blogTitle clamp-1" >{item.title1}</h2>
-            <p className="blogDescription clamp-7" >{item.description1}</p>
+            <p className="blogDescription clamp-4" >{item.description1}</p>
           </div>
         </div>
       </Link>

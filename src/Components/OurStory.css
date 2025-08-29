@@ -8,6 +8,7 @@
     font-size: 25px;
 }
 
+
 .ourStoryHeading {
     letter-spacing: 3px;
     font-size: 70px;
@@ -22,7 +23,6 @@
 .ourStoryPara {
     margin-top: 20px;
     line-height: 35px;
-    color: rgb(30, 30, 30);
 }
 
 @media screen and (max-width: 1000px) {

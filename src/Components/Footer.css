@@ -1,133 +1,66 @@
 .footerContainer {
     width: 100%;
-    min-height: 35vh;
-    background-color: gainsboro;
-    display: grid;
-    align-items: center;
-    grid-template-areas: "fourColumn fourColumn fourColumn fourColumn";
-}
-
-/* First box */
-
-.footerBoxFirst {
+    background-color: var(--footer-bg);
+    color: var(--secondary-text);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 0 30px;
+    margin-top: 80px;
 }
 
-.footerLogo {
-    width: 60px;
+.footerAbout {
+    padding: 25px 0;
+    border-top: 1px var(--secondary-text) solid;
+    display: flex;
+    justify-content: space-between;
 }
 
-.footerLogoText {
-    letter-spacing: 2px;
-    font-size: 30px;
-}
-
-.firstBoxFirstLine {
+.footerPayment {
     display: flex;
     align-items: center;
-    padding-top: 5px;
+    gap: 10px;
 }
 
-.firstBoxSecondLine {
-    margin-top: 5px;
-}
-
-.firstBoxSecondLine a{
-    text-decoration: none;
-    cursor: pointer;
-    color: firebrick;
-    font-size: 25px;
-}
-
-.firstBoxThirdLine {
-    margin: 8px;
-}
-
-.firstBoxThirdLine a{
-    text-decoration: none;
-    cursor: pointer;
-    color: firebrick;
-    font-size: 25px;
-}
-
-.copyRightIcon {
-    font-size: 12px;
-}
-
-/* Second box */
-
-.footerBoxSecond {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footerBoxSecond p {
-    padding-top: 5px;
-    letter-spacing: 1px;
-}
-
-.secondBoxFirstLine {
-    display: flex;
-    align-items: center;
-    padding: 1px;
-}
-
-.locationIcon {
-    font-size: 20px;
-}
-
-/* Third box */
-
-.footerBoxThird {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footerBoxThird p {
-    padding-top: 5px;
-}
 .footerInputContainer {
-    width: 220px;
-    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: #757575;
-    border-radius: 50px;
+    background-color: var(--primary-text);
+    border-radius: 20px;
     padding: 5px 10px;
-    margin-top: 10px;
 }
 
 .footerInput {
-    width: 100%;
-    height: 100%;
-    outline: none;
     border: none;
-    
 }
 
-/* Fourth box */
-
-.footerBoxFourth {
+.footerSocial {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
-.footerIconContainer {
+.footerRights {
+    width: 100%;
     display: flex;
-    padding-top: 10px;
-    font-size: 30px;
-
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-.footerIconContainer p {
-    padding-right: 10px;
+.copyRightIcon {
+    padding-top: 3px;
+}
+
+.footerRights a {
+    text-decoration: underline;
+    color: var(--primary-text);
+    font-weight: 700;
+}
+
+.footerSocialIconContainer {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -141,21 +74,6 @@
 
     .footerContainer {
         grid-template-areas: "fourColumn";
-    }
-    .fourDiv {
-        padding: 15px 30px;
-    }
-    .footerBoxFirst {
-        display: block;
-    }
-    .footerBoxSecond {
-        display: block;
-    }
-    .footerBoxThird {
-        display: block;
-    }
-    .footerBoxFourth {
-        display: block;
     }
 
 }

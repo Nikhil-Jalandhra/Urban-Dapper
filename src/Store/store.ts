@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartDetailSlice from "./cartDetailSlice";
 import toggleSlice from "./toggleSlice";
+import { paginationSlice } from "./paginationSlice";
 
 export interface showState {
     showToggle: {
@@ -27,5 +28,6 @@ export const store  = configureStore({
     reducer: {
         cartDetail: cartDetailSlice,
         showToggle: toggleSlice,
+        pagination: paginationSlice.reducer,
     }
 })

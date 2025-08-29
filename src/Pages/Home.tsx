@@ -28,10 +28,10 @@ function Home() {
         <div className="homeTextContainer">
 
             <div className="homeTextContainerHeading">
-                <h2 className="homeHeadingText">Crafted</h2>
+                <h2 className="homeHeadingText text-primary">Crafted</h2>
             </div>
 
-            <div className="homeTextContainerHeading2">
+            <div className="homeTextContainerHeading2 text-primary">
                 <h2 className="homeHeadingText2">for Confidence</h2>
             </div>
 
@@ -42,7 +42,7 @@ function Home() {
         <OurStory/>
 
         <div className="prouductFeaturedCardContainer">
-            <Link to={"/shop/All"}><h1>Products</h1></Link>
+            <Link to={"/shop/All"}><h1 className="text-primary">Products</h1></Link>
             <div className="prouductCardsContainer">
                 {uniqueItem.map((item, index) => 
                     ( index <= 3 && <ProductCard item={item} key={index}/>))}
@@ -51,7 +51,7 @@ function Home() {
 
 
         <div className="blogFeaturedCardContainer">
-            <Link to={"/Blog"}><h1>Latest Blogs</h1></Link>
+            <Link to={"/Blog"}><h1 className="text-primary">Latest Blogs</h1></Link>
             <div className="blogCardsContainer">
                 {blogData.map((item)=> (
                     item.id <= 3 &&  <BlogCard key={item.id} item={item}/> 

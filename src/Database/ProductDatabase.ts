@@ -23,9 +23,10 @@ import wallet2 from "../../Public/Images/ProductImages/wallet2.jpg"
 import wallet3 from "../../Public/Images/ProductImages/wallet3.jpg"
 import wallet4 from "../../Public/Images/ProductImages/wallet4.jpg"
 import wallet5 from "../../Public/Images/ProductImages/wallet5.jpg"
+import { Product } from "../types";
 
 
-const product  = [
+const product: Product[] = [
     {
         id: 1,
         title: "Comfort Fit T-shirt",
