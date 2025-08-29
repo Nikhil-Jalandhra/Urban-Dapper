@@ -10,7 +10,6 @@ export const toggleSlice = createSlice({
     initialState,
     reducers: {
         cartToggleFunction: (state, action: PayloadAction<boolean>) => {
-            console.log(action.payload + " aya hai");
             state.cart  = action.payload
             
         },

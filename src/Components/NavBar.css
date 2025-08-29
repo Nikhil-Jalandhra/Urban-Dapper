@@ -1,88 +1,57 @@
 .navbar {
     width: 100%;
-    height: 12vh;
     display: flex;
-    background-color: gainsboro;
+    background-color: var(--nav-bg);
+    color: var(--primary-text);
+    padding: 15px 15px;
+}
+
+.navbar a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 19px;
+}
+.navbar a:hover {
+    color: var(--primary-text);
 }
 
 .logoContainer {
     width: 25vw;
-    height: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
     font-size: 35px;
     padding-left: 20px;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-.navLink {
-    width: 60vw;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.navLink a {
-    color: black;
-    text-decoration: none;
-    font-size: 22px;
-    letter-spacing: 1px;
+    text-wrap: nowrap;
 }
 
 .navLinkContainer {
-    width: 100px;
-    height: 50px;
+    width: 60vw;
     display: flex;
-    align-items: center;
     justify-content: center;
-    cursor: pointer;
-    border-radius: 10px;
+    align-items: center;
+    gap: 50px;
 }
 
-.navLinkContainer:hover {
-    transition: 0.8s;
-    background-color: rgb(234, 234, 234);
-}
-
-.navLinkActiveCss {
-    background-color: rgb(156, 156, 156);
+.navLinkContainerActiveCss{
+    color: white;
 }
 
 .ccContainer {
     width: 15vw;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: end;
     padding-right: 20px;
-}
-
-.ccContainer a{
-    color: black;
-}
-
-.ccIcon {
-    width: 60px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 30px;
     cursor: pointer;
-    font-size: 25px;
-    border-radius: 10px;
-    transition: 0.8s;
-    margin: 5px;
 }
 
-.ccIcon:hover {
-    background-color: rgb(234, 234, 234);
+.ccContainer div {
+    font-size: 25px;
+    color: var(--secondary-text);
+}
+
+.ccContainer div:hover {
+    font-size: 25px;
+    color: var(--primary-text);
 }
 
 .navBarIcon {
@@ -90,7 +59,7 @@
 } 
 
 .navBarIcon:hover {
-    background-color: rgb(234, 234, 234);
+    color: var(--primary-text);
 }
 
 @media screen and (max-width: 1000px) {
@@ -101,7 +70,7 @@
     .logoContainer{
         width: 50vw;
     }
-    .navLink {
+    .navLinkContainer {
         display: none;
     }
     .navBarIcon {
@@ -113,7 +82,6 @@
         cursor: pointer;
         font-size: 25px;
         border-radius: 10px;
-        transition: 0.8s;
         margin: 5px;
     }
     .ccContainer {

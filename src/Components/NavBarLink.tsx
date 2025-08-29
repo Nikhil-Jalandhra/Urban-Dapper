@@ -1,6 +1,5 @@
 import "./NavBarLink.css"
 import { Link } from "react-router-dom";
-import logo from "../../Public/Logo/LogoText.png"
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { navToggleFunction } from "../Store/toggleSlice";
@@ -54,11 +53,11 @@ function NavBarLink() {
     <div>
       <div 
       ref={responsiveNav} 
-      className={` ${navVisible ? "" : "responsiveNavbarHide" } responsiveNavbar`}>
+      className={`${navVisible ? "" : "responsiveNavbarHide" } responsiveNavbar`}>
         <div className="responsiveNavClose"><SlClose onClick={toggleFunction} /></div>
-        <div className="responsiveNavImage">
+        {/* <div className="responsiveNavImage">
           <img src={logo} alt="" />
-        </div>
+        </div> */}
 
         <div className="responsiveNavLink">
           {

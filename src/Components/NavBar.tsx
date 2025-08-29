@@ -1,6 +1,5 @@
 import "./NavBar.css"
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../Public/Logo/OnlyLogo.png"
 import { BsPersonCircle } from "react-icons/bs";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -11,32 +10,16 @@ import { showState } from "../Store/store";
 
 function NavBar() {
 
- const dispatch =  useDispatch()
+ const dispatch =  useDispatch();
 
   const cartToggleState = useSelector((state: showState) => state.showToggle.cart);
   const navToggleState = useSelector((state: showState) => state.showToggle.nav);
 
   const navLink = [
-    {
-      name: "Home",
-      link: "/",
-    },
-    {
-      name: "About",
-      link: "/about",
-    },
-    {
-      name: "Shop",
-      link: "/shop/All",
-    },
-    {
-      name: "Blog",
-      link: "/blog",
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-    },
+    { name: "Home", link: "/", },
+    { name: "About", link: "/about", },
+    { name: "Shop", link: "/shop/All/1", },
+    { name: "Blog", link: "/blog/1", }
   ]
   
   const carttoggleFunctionality = () => {
@@ -63,19 +46,16 @@ function NavBar() {
         {/* logo here */}
 
         <div className="logoContainer">
-          <div className="logo">
-            <img src={logo} className="logo" alt="Logo" />
-          </div>
           <p>URBAN-DAPPER</p>
         </div>
 
         {/* link here */}
 
-        <div className="navLink">
+        <div className="navLinkContainer">
           {
             navLink.map((item,index)=> (
-              <Link key={index} to={item.link}>
-                <div className={`navLinkContainer ${activeLink === item.link ? "navLinkActiveCss" : ""}`}>
+              <Link key={index} to={item.link} className={`${activeLink === item.link ? "navLinkActiveCss" : ""}`}>
+                <div className={`navLink`}>
                   <p>{item.name}</p>
                 </div>
               </Link>
@@ -86,9 +66,12 @@ function NavBar() {
         {/* contact & cart here */}
 
         <div className="ccContainer">
-          <Link to="/login"><div className={`ccIcon ${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}><BsPersonCircle /></div></Link>
+          <Link to="/login">
+          <div className={`${["/login", "/signup"].includes(activeLink) ? "navLinkActiveCss" : ""}`}>
+            <BsPersonCircle />
+          </div></Link>
 
-          <div className="ccIcon" onClick={carttoggleFunctionality}><HiMiniShoppingCart /></div>
+          <div onClick={carttoggleFunctionality}><HiMiniShoppingCart /></div>
 
           <div className="navBarIcon" onClick={navtoggleFunctionality}><GiHamburgerMenu /></div>
 
